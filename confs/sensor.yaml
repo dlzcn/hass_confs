@@ -1,0 +1,80 @@
+  - platform: yr
+  - platform: HeWeather
+    city: CN101021500
+    aqi_city: CN101020100
+    appkey: !secret heweather_apikey
+    options:
+      - fl
+      - tmp
+      - cond_txt
+      - wind_spd
+      - hum
+      - pcpn
+      - pres
+      - vis
+      - aqi
+      - main
+      - qlty
+      - pm10
+      - pm25
+      - comf
+      - uv
+      - wind_sc
+      - wind_dir
+      - tmp_max
+      - tmp_min
+      - pop
+
+  - platform: uptime
+    name: Home Assistant Up Time
+    unit_of_measurement: hours
+
+  - platform: rest
+    resource: http://icanhazip.com
+    name: external_ip
+    value_template: '{{ value }}'
+    scan_interval: 86400
+
+  - platform: speedtest
+    minute: 30
+    hour:
+      - 0
+      - 6
+      - 12
+      - 18
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+  
+  - platform: systemmonitor
+    resources:
+      - type: disk_free
+        arg: /
+      - type: memory_free
+      - type: processor_use
+      - type: ipv4_address
+        arg: wlan0
+      - type: last_boot
+      - type: since_last_boot
+
+  - platform: rest
+    resource: https://pypi.python.org/pypi/homeassistant/json
+    name: HA Current Version
+    value_template: '{{ value_json.info.version }}'
+
+  - platform: command_line
+    name: HA Installed Version
+    command: /srv/homeassistant/bin/hass --version
+    scan_interval: 86400
+
+  - platform: sensortag
+    name: st_storage_room
+    mac: !secret sensortag_mac
+    scan_interval: 600
+    monitored_conditions:
+      - temperature
+      - illuminance
+      - humidity
+      - pressure
+      - battery    

@@ -1,0 +1,164 @@
+# Add an entry for each entity that you want to overwrite.
+  light.entrance_spotlight:
+    friendly_name: Entrance Spotlight
+  binary_sensor.entrance_sensor:
+    friendly_name: Entrance Motion Sensor
+  sensor.hvac_mode:
+    friendly_name: HVAC Mode (0:Cool, 1:Heating)
+
+# Living ROOM
+  climate.living_room_ac:
+    friendly_name: Living Room Air Conditioner
+  climate.living_room_heating:
+    friendly_name: Living Room Floor Heating
+    icon: mdi:radiator
+  light.living_room_lightstrip:
+    friendly_name: Living Room Strip Light
+  light.living_room_spotlight:
+    friendly_name: Living Room Spot Light
+  light.living_room_ceilinglamp:
+    hidden: true
+    friendly_name: Living Room Ceiling Lamp
+  light.living_room_ceiling_light:
+    friendly_name: Living Room Ceiling Light
+  cover.living_room_curtain:
+    friendly_name: Living Room Curtain
+  cover.living_room_sheer:
+    friendly_name: Living Room Sheer
+   
+# Dining ROOM
+  climate.dining_room_ac:
+    friendly_name: Dining Room Air Conditioner
+  light.dining_room_lightstrip:
+    friendly_name: Dining Room Strip Light
+  light.dining_room_spotlight:
+    friendly_name: Dining Room Spot Light
+  light.dining_room_ceilinglamp:
+    friendly_name: Dining Room Ceilling Lamp
+  cover.dining_room_curtain:
+    hidden: true
+    friendly_name: Dining Room Curtain
+  cover.dining_room_sheer:
+    friendly_name: Dining Room Sheer    
+
+# Master Bedroom
+  climate.master_bedroom_ac:
+    friendly_name: Master Bedroom Air Conditioner
+  climate.master_bedroom_heating:
+    friendly_name: Master Bedroom Floor Heating
+    icon: mdi:radiator
+  light.master_bedroom_light:
+    friendly_name: Master Bedroom Spot Light (door)
+  light.master_bedroom_lightstrip:
+    friendly_name: Master Bedroom Strip Light
+  light.master_bedroom_spotlight:
+    friendly_name: Master Bedroom Spotlight
+  light.master_bedroom_ceilinglamp:
+    friendly_name: Master Bedroom Ceilling Lamp
+  cover.master_bedroom_curtain:
+    friendly_name: Master Bedroom Curtain
+  cover.master_bedroom_sheer:
+    friendly_name: Master Bedroom Sheer 
+    hidden: true   
+
+# Other rooms (guest room & study)
+  switch.other_room_light_onoff:
+    friendly_name: Lights (Switch for Other Rooms) 
+  climate.guest_room_ac:
+    friendly_name: Guest Room Air Conditioner
+  switch.guest_room_heating_onoff:
+    friendly_name: Guest Room Heating Switch
+    icon: mdi:radiator
+  climate.study_ac:
+    friendly_name: Study Air Conditioner
+  switch.study_heating_onoff:
+    friendly_name: Study Heating Switch
+    icon: mdi:radiator
+
+# Storage room (TI SensorTag -- CC2650)
+  sensor.st_storage_room_temperature:
+    friendly_name: Temperature
+  sensor.st_storage_room_illuminance:
+    friendly_name: Illumination
+  sensor.st_storage_room_humidity:
+    friendly_name: Humidity
+  sensor.st_storage_room_pressure:
+    friendly_name: Air pressure
+  sensor.st_storage_room_battery:
+    friendly_name: Battery
+
+# scene
+  scene.entrance_return:
+    friendly_name: Return
+    icon: mdi:login
+  scene.entrance_exit:
+    friendly_name: Exit
+    icon: mdi:logout
+  scene.living_room_leisure:
+    friendly_name: Living Room Leisure
+    icon: mdi:monitor-cellphone
+  scene.living_room_party:
+    friendly_name: Living Room Party
+    icon: mdi:spotlight-beam
+  scene.dining_room_dining:
+    friendly_name: Dining Room Dining
+    icon: mdi:food-variant
+  scene.dining_room_party:
+    friendly_name: Dining Room Party
+    icon: mdi:spotlight-beam
+  scene.master_bedroom_0:
+    friendly_name: Leisure
+    icon: mdi:wechat
+  scene.master_bedroom_1:
+    friendly_name: Leave
+    icon: mdi:window-close
+  scene.master_bedroom_2:
+    friendly_name: Night
+    icon: mdi:weather-night
+  scene.master_bedroom_3:
+    friendly_name: Sleep
+    icon: mdi:sleep
+
+  # Speed Test Sensor
+  sensor.speedtest_ping:
+    friendly_name: Ping Speed
+  sensor.speedtest_upload:
+    friendly_name: Upload Speed
+  sensor.speedtest_download:
+    friendly_name: Download Speed
+  sensor.external_ip:
+    friendly_name: External IP Address
+
+  # System Info Sensor
+  sensor.cpu_speed:
+    friendly_name: CPU Speed
+  sensor.cpu_used:
+    friendly_name: CPU Used
+  sensor.disk_free_:
+    friendly_name: Disk Free Space
+  sensor.ram_free:
+    friendly_name: Available Memory
+  sensor.ipv4_address_wlan0:
+    friendly_name: Local IP Address
+  sensor.last_boot:
+    friendly_name: Last Boot
+  sensor.since_last_boot:
+    friendly_name: Up Since
+  sensor.signal_strength:
+    icon: mdi:signal
+  sensor.link_quality:
+    icon: mdi:link-variant
+  sensor.ha_installed_version:
+    icon: mdi:home-assistant
+  sensor.ha_current_version:
+    icon: mdi:home-assistant
+  sensor.ha_last_restart:
+    icon: mdi:home-assistant
+  
+  # Network traffic
+  sensor.r6400v2_gateway_kbytesec_received:
+    friendly_name: Main Router - Traffic In
+    icon: mdi:download-network
+  sensor.r6400v2_gateway_kbytesec_sent:
+    friendly_name: Main Router - Traffic Out
+    icon: mdi:upload-network

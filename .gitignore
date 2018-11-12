@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# my secret informaiton
+secrets.yaml
+# device tracker
+known_devices.yaml

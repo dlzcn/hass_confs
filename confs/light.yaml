@@ -1,0 +1,3 @@
+- platform: opple
+  name: living_room_ceiling_light
+  host: !secret opple_light_livingroom_ip

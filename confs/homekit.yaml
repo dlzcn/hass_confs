@@ -1,0 +1,65 @@
+  auto_start: False
+  filter:
+    include_domains:
+      - light
+      - switch
+      - cover
+      - sensor
+      - climate
+    exclude_domains:
+      - automation
+    exclude_entities:
+      - sensor.entrance_sensor
+      - sensor.hvac_mode
+  entity_config:
+    switch.other_room_light_onoff:
+      name: Other Rooms Light Main Switch
+    light.entrance_spotlight:
+      name: Entrance Spotlight
+    light.living_room_lightstrip:
+      name: Living Room Light strip
+    light.living_room_spotlight:
+      name: Living Room Spotlight
+    light.living_room_ceiling_light:
+      name: Living Room Ceiling lamp
+    cover.living_room_curtain:
+      name: Living Room Curtain
+    cover.living_room_sheer:
+      name: Living Room Sheer
+    climate.living_room_ac:
+      name: Living Room AC
+    climate.living_room_heating:
+      name: Living Room Heating
+    light.dining_room_lightstrip:
+      name: Dining Room Light strip
+    light.dining_room_spotlight:
+      name: Dining Room Spotlight
+    light.dining_room_ceilinglamp:
+      name: Dining Room Ceiling lamp
+    cover.dining_room_sheer:
+      name: Dining Room Sheer
+    light.master_bedroom_light:
+      name: Master Bedroom Light (Entrance)
+    light.master_bedroom_lightstrip:
+      name: Master Bedroom Lightstrip
+    light.master_bedroom_spotlight:
+      name: Master Bedroom Spotlight
+    light.master_bedroom_ceilinglamp:
+      name: Master Bedroom Ceiling lamp
+    cover.master_bedroom_curtain:
+      name: Master Bedroom Curtain
+    cover.master_bedroom_sheer:
+      name: Master Bedroom Sheer
+    climate.master_bedroom_ac:
+      name: Master Bedroom AC
+    climate.master_bedroom_heating:
+      name: Master Bedroom Heating
+    climate.guest_room_ac:
+      name: Guest Room AC
+    switch.guest_room_heating_onoff:
+      name: Guest Room Heating Switch
+    climate.study_ac:
+      name: Study AC
+    switch.study_heating_onoff:
+      name: Study Heating Switch
+

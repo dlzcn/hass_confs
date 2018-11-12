@@ -1,0 +1,16 @@
+  - platform: ubus
+    host: !secret addr_openwrt_on_wndrmacv2
+    username: root
+    password: !secret router_password
+    interval_seconds: 15
+    consider_home: 60
+    track_new_devices: True
+    hide_if_away: False
+  - platform: netgear
+    host: !secret addr_netgear_r6400v2
+    username: admin
+    password: !secret router_password
+    interval_seconds: 30
+    consider_home: 60
+    track_new_devices: True
+    hide_if_away: False

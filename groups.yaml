@@ -1,0 +1,215 @@
+entrance:
+  name: 门厅
+  view: true
+  icon: mdi:castle
+  entities:
+    - light.entrance_spotlight
+    - binary_sensor.entrance_sensor
+    - scene.entrance_return
+    - scene.entrance_exit
+    - scene.living_room_leisure
+    - scene.living_room_party
+    - scene.dining_room_dining
+    - scene.dining_room_party
+
+living_room:
+  name: Living Room
+  view: true
+  icon: mdi:theater
+  entities:
+    - light.living_room_lightstrip
+    - light.living_room_spotlight
+    - light.living_room_ceiling_light
+    - light.living_room_ceilinglamp
+    - cover.living_room_curtain
+    - cover.living_room_sheer
+    - climate.living_room_ac
+    - climate.living_room_heating
+
+dining_room:
+  name: Dining Room
+  view: true
+  icon: mdi:glass-cocktail
+  entities:
+    - light.dining_room_lightstrip
+    - light.dining_room_spotlight
+    - light.dining_room_ceilinglamp
+    - cover.dining_room_curtain
+    - cover.dining_room_sheer
+    - climate.dining_room_ac
+
+master_bedroom:
+  name: Master Bedroom
+  view: true
+  icon: mdi:hotel
+  entities:
+    - scene.master_bedroom_0
+    - scene.master_bedroom_1
+    - scene.master_bedroom_2
+    - scene.master_bedroom_3
+    - light.master_bedroom_lightstrip
+    - light.master_bedroom_spotlight
+    - light.master_bedroom_ceilinglamp
+    - light.master_bedroom_light
+    - cover.master_bedroom_curtain
+    - cover.master_bedroom_sheer
+    - climate.master_bedroom_ac
+    - climate.master_bedroom_heating    
+
+other_rooms:
+  name: Guest Room | Study
+  view: true
+  icon: mdi:book-open-page-variant
+  entities:
+    - switch.other_room_light_onoff
+    - climate.guest_room_ac
+    - switch.guest_room_heating_onoff
+    - climate.study_ac
+    - switch.study_heating_onoff
+
+storage_room:
+  name: Control Cabinet
+  view: false
+  icon: mdi:wall
+  entities:
+    - sensor.st_storage_room_temperature
+    - sensor.st_storage_room_illuminance
+    - sensor.st_storage_room_humidity
+    - sensor.st_storage_room_pressure
+    - sensor.st_storage_room_battery   
+
+scenes_group:
+  name: 场景
+  view: true
+  icon: mdi:developer-board
+  entities:
+    - scene.entrance_return
+    - scene.entrance_exit
+    - scene.living_room_leisure
+    - scene.living_room_party
+    - scene.dining_room_dining
+    - scene.dining_room_party
+    - scene.master_bedroom_0
+    - scene.master_bedroom_1
+    - scene.master_bedroom_2
+    - scene.master_bedroom_3
+
+internet_status:
+  name: 网络
+  view: false
+  icon: mdi:server-network
+  entities:
+    - sensor.r6400v2_gateway_kbytesec_sent
+    - sensor.r6400v2_gateway_kbytesec_received
+    - sensor.external_ip
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload
+    - sensor.speedtest_download
+
+system_monitor:
+  name: 系统资源
+  view: false
+  icon: mdi:monitor
+  entities:
+    - sensor.cpu_used
+    - sensor.ram_free
+    - sensor.disk_free_
+    - sensor.ipv4_address_wlan0
+    - sensor.last_boot
+    - sensor.since_last_boot
+    - sensor.signal_strength
+    - sensor.link_quality
+    - sensor.current_log_level
+    - sensor.ram_available
+    - sensor.processor_use
+    - sensor.memory_free
+    - sensor.ha_installed_version
+    - sensor.ha_current_version
+    - sensor.home_assistant_up_time
+      
+device_tracker:
+  name: 主要设备
+  view: false
+  icon: mdi:server
+  entities:
+    - device_tracker.raspberrypi
+    - device_tracker.openwrt
+    - device_tracker.lumigatewayv3_miio57655989
+    - device_tracker.d09b05075597
+    - device_tracker.c0eefb03948f
+    - device_tracker.mitv4a544d24be36820c49
+    - device_tracker.android65fb25084c7cc7d3
+    - device_tracker.android8f98d6795a53dd81
+
+people_tag:
+  name: 人员追踪
+  view: false
+  icon: mdi:tag
+  entities:
+    - device_tracker.haifengdembp
+    - device_tracker.oneplus_5
+    - device_tracker.cc088dab293a
+    - device_tracker.mengshideipad
+    - device_tracker.iphone2
+    - device_tracker.28ed6ac8552e
+
+ha_dashboards:
+  name: Dashbords
+  view: true
+  icon: mdi:monitor-multiple
+  entities:
+    - group.storage_room
+    - group.system_monitor
+    - group.internet_status  
+    - group.device_tracker
+    - group.people_tag
+
+temperature:
+  name: 温度
+  view: no
+  entities:
+    - sun.sun
+    - sensor.heweather_tmp_max
+    - sensor.heweather_tmp_min
+    - sensor.heweather_fl
+    - sensor.heweather_tmp
+    - sensor.heweather_hum
+
+nature:
+  name: 天气
+  view: no
+  entities:
+    - sensor.heweather_pop
+    - sensor.heweather_cond_txt
+    - sensor.heweather_pcpn
+    - sensor.heweather_pres
+    - sensor.heweather_vis
+    - sensor.heweather_wind_sc
+    - sensor.heweather_wind_dir
+    - sensor.heweather_wind_spd
+
+acq:
+  name: 空气
+  view: no
+  entities:
+    - sensor.heweather_pm25
+    - sensor.heweather_pm10
+    - sensor.heweather_main
+    - sensor.heweather_aqi
+    - sensor.heweather_qlty
+ 
+automation_group:
+  name: Automation
+  icon: mdi:factory
+  view: false
+  entities:
+    - automation.homekit_start  
+
+#default_view:
+#  view: yes
+#  icon: mdi:home
+#  entities:
+#     - group.temperature
+#     - group.nature
+#     - group.acq
+#     - group.entrance

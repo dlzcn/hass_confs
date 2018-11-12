@@ -1,0 +1,50 @@
+# Refer to http://xknx.io/ for more information
+general:
+  own_address: '1.2.222'
+
+groups:
+  binary_sensor:
+    entrance_sensor: {group_address: '6/0/4', device_class: 'motion'}
+  
+  sensor:
+    hvac_mode: {group_address: '15/0/5', value_type: 'pulse'}
+
+  switch:
+    guest_room_heating_onoff: {group_address: '0/0/5', group_address_state: '0/1/5'}
+    study_heating_onoff: {group_address: '0/0/6', group_address_state: '0/1/6'}
+    other_room_light_onoff: {group_address: '0/0/9', group_address_state: '0/1/9'}
+
+  light:
+    entrance_spotlight: {group_address_switch: '1/0/1', group_address_brightness: '1/3/1', group_address_brightness_state: '1/4/1'}
+    
+    living_room_lightstrip: {group_address_switch: '0/0/2', group_address_switch_state: '0/1/2'} 
+    living_room_spotlight: {group_address_switch: '1/0/3', group_address_brightness: '1/3/3', group_address_brightness_state: '1/4/3'} 
+    living_room_ceilinglamp: {group_address_switch: '1/0/6', group_address_brightness: '1/3/6', group_address_brightness_state: '1/4/6'}
+    dining_room_lightstrip: {group_address_switch: '0/0/1', group_address_switch_state: '0/1/1'} 
+    dining_room_spotlight: {group_address_switch: '1/0/2', group_address_brightness: '1/3/2', group_address_brightness_state: '1/4/2'} 
+    dining_room_ceilinglamp: {group_address_switch: '1/0/5', group_address_brightness: '1/3/5', group_address_brightness_state: '1/4/5'}
+    master_bedroom_lightstrip: {group_address_switch: '0/0/3', group_address_switch_state: '0/1/3'} 
+    master_bedroom_spotlight: {group_address_switch: '1/0/4', group_address_brightness: '1/3/4', group_address_brightness_state: '1/4/4'} 
+    master_bedroom_ceilinglamp: {group_address_switch: '1/0/7', group_address_brightness: '1/3/7', group_address_brightness_state: '1/4/7'}
+    master_bedroom_light: {group_address_switch: '0/0/8', group_address_switch_state: '0/1/8'}
+
+  cover:
+    living_room_curtain: {group_address_long: '2/0/3', group_address_short: '2/1/3'}
+    living_room_sheer: {group_address_long: '2/0/4',  group_address_short: '2/1/4'}
+    dining_room_curtain: {group_address_long: '2/0/7', group_address_short: '2/1/7'}
+    dining_room_sheer: {group_address_long: '2/0/8',  group_address_short: '2/1/8'}
+    master_bedroom_curtain: {group_address_long: '2/0/5', group_address_short: '2/1/5'}
+    master_bedroom_sheer: {group_address_long: '2/0/6',  group_address_short: '2/1/6'}
+
+  scene:
+    entrance_return: {group_address: '3/0/1', scene_number: '0'}
+    entrance_exit: {group_address: '3/0/1', scene_number: '1'}
+    living_room_leisure: {group_address: '3/0/3', scene_number: '0'}
+    living_room_party: {group_address: '3/0/3', scene_number: '1'}
+    dining_room_dining: {group_address: '3/0/2', scene_number: '0'}
+    dining_room_party: {group_address: '3/0/2', scene_number: '1'}
+    master_bedroom_0: {group_address: '3/0/4', scene_number: '0'}
+    master_bedroom_1: {group_address: '3/0/4', scene_number: '2'}
+    master_bedroom_2: {group_address: '3/0/4', scene_number: '3'}
+    master_bedroom_3: {group_address: '3/0/4', scene_number: '4'}
+     
