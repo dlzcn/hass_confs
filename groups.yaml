@@ -135,6 +135,7 @@ device_tracker:
     - device_tracker.raspberrypi
     - device_tracker.openwrt
     - device_tracker.lumigatewayv3_miio57655989
+    - device_tracker.chuangmi_camera_ipc009
     - device_tracker.d09b05075597
     - device_tracker.c0eefb03948f
     - device_tracker.mitv4a544d24be36820c49
