@@ -103,6 +103,13 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+# HA running files
+.HA_VERSION
+.homekit.state
+.storage/
+.uuid
+home-assistant_v2.db
+
 # my secret informaiton
 secrets.yaml
 # device tracker
