@@ -11,7 +11,10 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Asia/Shanghai
   # Customization file
-  customize: !include customize.yaml
+  customize: !include_dir_merge_named customize/
+  customize_domain:
+    device_tracker:
+      hidden: true
 
 # Show links to resources in log and frontend
 # introduction:
@@ -60,16 +63,14 @@ tts:
 # Cloud
 cloud:
 
-# home KNX
+# KNX devices
 knx:
-  config_file: 'confs/xknx.yaml'
+  config_file: 'domains/xknx.yaml'
   tunneling:
     host: !secret knx_router_ip
     port: 3671
     local_ip: !secret local_ip
     #fire_event: True
-
-climate: !include confs/climate.yaml
 
 xiaomi_aqara:
   discovery_retry: 5
@@ -77,10 +78,13 @@ xiaomi_aqara:
     - mac: !secret xiaomi_gateway_mac
       key: !secret xiaomi_gateway_key
 
-homekit: !include confs/homekit.yaml
-light: !include confs/light.yaml
-sensor: !include confs/sensor.yaml
-# python script ->
+homekit: !include domains/homekit.yaml
+climate: !include domains/climate.yaml
+light: !include domains/light.yaml
+device_tracker: !include domains/device_tracker.yaml
+
+sensor: !include_dir_merge_list sensor/
+
 # This component allows you to write Python scripts that are exposed as 
 # services in Home Assistant. Each Python file created in the
 # <config>/python_scripts/ folder will be exposed as a service. The content 
@@ -88,8 +92,6 @@ sensor: !include confs/sensor.yaml
 # service. The scripts are run in a sandboxed environment. 
 #python_script:
 
-device_tracker: !include confs/device_tracker.yaml
-group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-
+group: !include_dir_merge_named groups/

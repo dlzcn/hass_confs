@@ -1,5 +1,5 @@
  
-automation_group:
+automation:
   name: Automation
   icon: mdi:factory
   view: false

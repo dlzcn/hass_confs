@@ -1,6 +1,6 @@
 
-ha_dashboards:
-  name: Dashbords
+dashboard_device_status:
+  name: Dashbord (Device Status)
   view: true
   icon: mdi:monitor-multiple
   entities:

@@ -10,15 +10,15 @@
 
   # System Info Sensor
   sensor.cpu_temp:
-    friendly_name: CPU Temp
+    friendly_name: CPU Temperature
   sensor.cpu_speed:
     friendly_name: CPU Speed
-  sensor.cpu_used:
-    friendly_name: CPU Used
+  sensor.processor_use:
+    friendly_name: Processor Use
   sensor.disk_free_:
     friendly_name: Disk Free Space
-  sensor.ram_free:
-    friendly_name: Available Memory
+  sensor.memory_free:
+    friendly_name: Memory Free
   sensor.ipv4_address_wlan0:
     friendly_name: Local IP Address
   sensor.last_boot:
