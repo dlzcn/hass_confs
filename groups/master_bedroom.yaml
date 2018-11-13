@@ -1,0 +1,17 @@
+master_bedroom:
+  name: Master Bedroom
+  view: true
+  icon: mdi:hotel
+  entities:
+    - scene.master_bedroom_0
+    - scene.master_bedroom_1
+    - scene.master_bedroom_2
+    - scene.master_bedroom_3
+    - light.master_bedroom_lightstrip
+    - light.master_bedroom_spotlight
+    - light.master_bedroom_ceilinglamp
+    - light.master_bedroom_light
+    - cover.master_bedroom_curtain
+    - cover.master_bedroom_sheer
+    - climate.master_bedroom_ac
+    - climate.master_bedroom_heating    

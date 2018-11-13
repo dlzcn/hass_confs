@@ -1,0 +1,13 @@
+entrance:
+  name: 门厅
+  view: true
+  icon: mdi:castle
+  entities:
+    - light.entrance_spotlight
+    - binary_sensor.entrance_sensor
+    - scene.entrance_return
+    - scene.entrance_exit
+    - scene.living_room_leisure
+    - scene.living_room_party
+    - scene.dining_room_dining
+    - scene.dining_room_party

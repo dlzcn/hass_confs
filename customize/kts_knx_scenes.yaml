@@ -1,0 +1,31 @@
+# scene
+  scene.entrance_return:
+    friendly_name: Return
+    icon: mdi:login
+  scene.entrance_exit:
+    friendly_name: Exit
+    icon: mdi:logout
+  scene.living_room_leisure:
+    friendly_name: Living Room Leisure
+    icon: mdi:monitor-cellphone
+  scene.living_room_party:
+    friendly_name: Living Room Party
+    icon: mdi:spotlight-beam
+  scene.dining_room_dining:
+    friendly_name: Dining Room Dining
+    icon: mdi:food-variant
+  scene.dining_room_party:
+    friendly_name: Dining Room Party
+    icon: mdi:spotlight-beam
+  scene.master_bedroom_0:
+    friendly_name: Leisure
+    icon: mdi:wechat
+  scene.master_bedroom_1:
+    friendly_name: Leave
+    icon: mdi:window-close
+  scene.master_bedroom_2:
+    friendly_name: Night
+    icon: mdi:weather-night
+  scene.master_bedroom_3:
+    friendly_name: Sleep
+    icon: mdi:sleep

@@ -1,0 +1,56 @@
+  # Speed Test Sensor
+  sensor.speedtest_ping:
+    friendly_name: Ping Speed
+  sensor.speedtest_upload:
+    friendly_name: Upload Speed
+  sensor.speedtest_download:
+    friendly_name: Download Speed
+  sensor.external_ip:
+    friendly_name: External IP Address
+
+  # System Info Sensor
+  sensor.cpu_temp:
+    friendly_name: CPU Temp
+  sensor.cpu_speed:
+    friendly_name: CPU Speed
+  sensor.cpu_used:
+    friendly_name: CPU Used
+  sensor.disk_free_:
+    friendly_name: Disk Free Space
+  sensor.ram_free:
+    friendly_name: Available Memory
+  sensor.ipv4_address_wlan0:
+    friendly_name: Local IP Address
+  sensor.last_boot:
+    friendly_name: Last Boot
+  sensor.since_last_boot:
+    friendly_name: Up Since
+  #sensor.signal_strength:
+  #  icon: mdi:signal
+  #sensor.link_quality:
+  #  icon: mdi:link-variant
+  sensor.ha_installed_version:
+    icon: mdi:home-assistant
+  sensor.ha_current_version:
+    icon: mdi:home-assistant
+  sensor.ha_last_restart:
+    icon: mdi:home-assistant
+  
+  # Network traffic
+  sensor.r6400v2_gateway_kbytesec_received:
+    friendly_name: Main Router - Traffic In
+    icon: mdi:download-network
+  sensor.r6400v2_gateway_kbytesec_sent:
+    friendly_name: Main Router - Traffic Out
+    icon: mdi:upload-network
+
+  sensor.st_control_cabinet_temperature:
+    friendly_name: Temperature
+  sensor.st_control_cabinet_illuminance:
+    friendly_name: Illuminance
+  sensor.st_control_cabinet_humidity:
+    friendly_name: Humidity
+  sensor.st_control_cabinet_pressure:
+    friendly_name: Air pressure
+  sensor.st_control_cabinet_battery:     
+    friendly_name: Battery

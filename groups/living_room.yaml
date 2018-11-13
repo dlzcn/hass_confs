@@ -1,0 +1,13 @@
+living_room:
+  name: Living Room
+  view: true
+  icon: mdi:theater
+  entities:
+    - light.living_room_lightstrip
+    - light.living_room_spotlight
+    - light.living_room_ceiling_light
+    - light.living_room_ceilinglamp
+    - cover.living_room_curtain
+    - cover.living_room_sheer
+    - climate.living_room_ac
+    - climate.living_room_heating

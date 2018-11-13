@@ -1,0 +1,26 @@
+  - platform: yr
+  - platform: HeWeather
+    city: CN101021500
+    aqi_city: CN101020100
+    appkey: !secret heweather_apikey
+    options:
+      - fl
+      - tmp
+      - cond_txt
+      - wind_spd
+      - hum
+      - pcpn
+      - pres
+      - vis
+      - aqi
+      - main
+      - qlty
+      - pm10
+      - pm25
+      - comf
+      - uv
+      - wind_sc
+      - wind_dir
+      - tmp_max
+      - tmp_min
+      - pop

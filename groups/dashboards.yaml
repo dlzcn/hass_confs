@@ -1,0 +1,11 @@
+
+ha_dashboards:
+  name: Dashbords
+  view: true
+  icon: mdi:monitor-multiple
+  entities:
+    - group.control_cabinet_monitor
+    - group.raspberrypi_sys_monitor
+    - group.internet_connection_monitor  
+    - group.nonportable_devices
+    - group.portable_devices

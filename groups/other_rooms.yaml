@@ -1,0 +1,11 @@
+
+other_rooms:
+  name: Guest Room | Study
+  view: true
+  icon: mdi:book-open-page-variant
+  entities:
+    - switch.other_room_light_onoff
+    - climate.guest_room_ac
+    - switch.guest_room_heating_onoff
+    - climate.study_ac
+    - switch.study_heating_onoff

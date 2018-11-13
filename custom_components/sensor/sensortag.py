@@ -85,7 +85,7 @@ class _Sensortag():
         self._registered = []
         self._cache = {}
         self._cache_timeout = timedelta(seconds=cache_timeout)
-        self._last_read = datetime.now() - timedelta(seconds=cache_timeout+1)
+        self._last_read = None
         self.lock = Lock()
     
     def enable(self, sensorname):
@@ -105,7 +105,7 @@ class _Sensortag():
                 sensorname, self.mac)
             return None
 
-        if self._cache is None or force_update or \
+        if not self._cache or force_update or \
             (datetime.now() - self._cache_timeout > self._last_read):
             self._last_read = datetime.now()
             # read all in once!

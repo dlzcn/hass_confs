@@ -1,30 +1,3 @@
-  - platform: yr
-  - platform: HeWeather
-    city: CN101021500
-    aqi_city: CN101020100
-    appkey: !secret heweather_apikey
-    options:
-      - fl
-      - tmp
-      - cond_txt
-      - wind_spd
-      - hum
-      - pcpn
-      - pres
-      - vis
-      - aqi
-      - main
-      - qlty
-      - pm10
-      - pm25
-      - comf
-      - uv
-      - wind_sc
-      - wind_dir
-      - tmp_max
-      - tmp_min
-      - pop
-
   - platform: uptime
     name: Home Assistant Up Time
     unit_of_measurement: hours
@@ -58,10 +31,17 @@
       - type: last_boot
       - type: since_last_boot
 
+  - platform: command_line
+    name: cpu temp
+    command: "/bin/cat /sys/class/thermal/thermal_zone0/temp"
+    unit_of_measurement: "°C"
+    value_template: '{{ value | multiply(0.001) }}'
+
   - platform: rest
     resource: https://pypi.python.org/pypi/homeassistant/json
     name: HA Current Version
     value_template: '{{ value_json.info.version }}'
+    scan_interval: 14400
 
   - platform: command_line
     name: HA Installed Version
@@ -69,7 +49,7 @@
     scan_interval: 86400
 
   - platform: sensortag
-    name: st_storage_room
+    name: st_control_cabinet
     mac: !secret sensortag_mac
     scan_interval: 600
     monitored_conditions:
@@ -77,4 +57,4 @@
       - illuminance
       - humidity
       - pressure
-      - battery    
+      - battery

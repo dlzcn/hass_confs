@@ -1,0 +1,41 @@
+
+internet_connection_monitor:
+  name: 网络接入
+  view: false
+  icon: mdi:server-network
+  entities:
+    - sensor.r6400v2_gateway_kbytesec_sent
+    - sensor.r6400v2_gateway_kbytesec_received
+    - sensor.external_ip
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload
+    - sensor.speedtest_download
+
+raspberrypi_sys_monitor:
+  name: 树莓派资源
+  view: false
+  icon: mdi:monitor
+  entities:
+    - sensor.cpu_temp
+    - sensor.processor_use
+    - sensor.memory_free
+    - sensor.disk_free_
+    - sensor.ipv4_address_wlan0
+    - sensor.last_boot
+    - sensor.since_last_boot
+    #- sensor.signal_strength
+    #- sensor.link_quality
+    - sensor.ha_installed_version
+    - sensor.ha_current_version
+    - sensor.home_assistant_up_time
+
+control_cabinet_monitor:
+  name: 智能控制柜
+  view: false
+  icon: mdi:wall
+  entities:
+    - sensor.st_control_cabinet_temperature
+    - sensor.st_control_cabinet_illuminance
+    - sensor.st_control_cabinet_humidity
+    - sensor.st_control_cabinet_pressure
+    - sensor.st_control_cabinet_battery   

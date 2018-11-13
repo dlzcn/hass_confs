@@ -1,0 +1,16 @@
+knx_scenes:
+  name: 场景
+  view: true
+  icon: mdi:developer-board
+  entities:
+    - scene.entrance_return
+    - scene.entrance_exit
+    - scene.living_room_leisure
+    - scene.living_room_party
+    - scene.dining_room_dining
+    - scene.dining_room_party
+    - scene.master_bedroom_0
+    - scene.master_bedroom_1
+    - scene.master_bedroom_2
+    - scene.master_bedroom_3
+

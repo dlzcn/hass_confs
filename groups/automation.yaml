@@ -1,0 +1,7 @@
+ 
+automation_group:
+  name: Automation
+  icon: mdi:factory
+  view: false
+  entities:
+    - automation.homekit_start  

@@ -1,0 +1,34 @@
+
+temperature:
+  name: 温度
+  view: no
+  entities:
+    - sun.sun
+    - sensor.heweather_tmp_max
+    - sensor.heweather_tmp_min
+    - sensor.heweather_fl
+    - sensor.heweather_tmp
+    - sensor.heweather_hum
+
+nature:
+  name: 天气
+  view: no
+  entities:
+    - sensor.heweather_pop
+    - sensor.heweather_cond_txt
+    - sensor.heweather_pcpn
+    - sensor.heweather_pres
+    - sensor.heweather_vis
+    - sensor.heweather_wind_sc
+    - sensor.heweather_wind_dir
+    - sensor.heweather_wind_spd
+
+acq:
+  name: 空气
+  view: no
+  entities:
+    - sensor.heweather_pm25
+    - sensor.heweather_pm10
+    - sensor.heweather_main
+    - sensor.heweather_aqi
+    - sensor.heweather_qlty

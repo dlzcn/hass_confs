@@ -1,0 +1,27 @@
+
+nonportable_devices:
+  name: 固定设备
+  view: false
+  icon: mdi:server
+  entities:
+    - sensor.knx_router 
+    - sensor.raspberrypi
+    - sensor.wndrmacv2
+    - sensor.lumigatewayv3
+    - sensor.chuangmi_camera
+    - sensor.mitv4a
+    - sensor.oneplusone
+    - sensor.nexus5
+    - sensor.nexus7_2013
+
+portable_devices:
+  name: 便携设备
+  view: false
+  icon: mdi:tag
+  entities:
+    - device_tracker.haifengdembp
+    - device_tracker.oneplus_5
+    - device_tracker.cc088dab293a
+    - device_tracker.mengshideipad
+    - device_tracker.iphone2
+    - device_tracker.28ed6ac8552e
