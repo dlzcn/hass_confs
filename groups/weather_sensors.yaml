@@ -1,9 +1,11 @@
 
 temperature:
-  name: 温度
+  name: 实时天气
   view: no
   entities:
     - sun.sun
+    - sensor.heweather_cond_txt
+    - sensor.heweather_uv    
     - sensor.heweather_tmp_max
     - sensor.heweather_tmp_min
     - sensor.heweather_fl
@@ -11,22 +13,21 @@ temperature:
     - sensor.heweather_hum
 
 nature:
-  name: 天气
+  name: 降水&风力
   view: no
   entities:
     - sensor.heweather_pop
-    - sensor.heweather_cond_txt
     - sensor.heweather_pcpn
     - sensor.heweather_pres
-    - sensor.heweather_vis
     - sensor.heweather_wind_sc
     - sensor.heweather_wind_dir
     - sensor.heweather_wind_spd
 
 acq:
-  name: 空气
+  name: 空气质量
   view: no
   entities:
+    - sensor.heweather_vis
     - sensor.heweather_pm25
     - sensor.heweather_pm10
     - sensor.heweather_main

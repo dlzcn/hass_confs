@@ -17,7 +17,6 @@
       - qlty
       - pm10
       - pm25
-      - comf
       - uv
       - wind_sc
       - wind_dir

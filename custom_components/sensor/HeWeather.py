@@ -31,7 +31,7 @@ OPTIONS = dict(fl=["HeWeather_fl", "实时体感温度", "mdi:temperature-celsiu
                wind_spd=["HeWeather_wind_spd", "风速", "mdi:speedometer", "km/h"],
                wind_sc=["HeWeather_wind_sc", "风力", "mdi:flag-variant", None],
                wind_dir=["HeWeather_wind_dir", "风向", "mdi:apple-safari", None],
-               cond_txt=["HeWeather_cond_txt", "天气状态", "mdi:counter", None],
+               cond_txt=["HeWeather_cond_txt", "天气状态", "mdi:weather-partlycloudy", None],
                qlty=["HeWeather_qlty", "空气质量", "mdi:beach", None],
                main=["HeWeather_main", "主要污染物", "mdi:chart-bar-stacked", None],
                aqi=["HeWeather_aqi", "空气质量指数", "mdi:poll", "AQI"],
