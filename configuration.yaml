@@ -15,10 +15,6 @@ homeassistant:
   customize_domain:
     device_tracker:
       hidden: true
-  customize_glob:
-    "sensor.devsts_*":
-      templates:
-        rgb_color: "if (state === 'online') return [251, 210, 41]; else return [54, 95, 140];"
 
 # Show links to resources in log and frontend
 # introduction:
@@ -83,11 +79,11 @@ xiaomi_aqara:
       key: !secret xiaomi_gateway_key
 
 homekit: !include domains/homekit.yaml
+
 climate: !include domains/climate.yaml
 light: !include domains/light.yaml
 device_tracker: !include domains/device_tracker.yaml
-
-sensor: !include_dir_merge_list sensor/
+sensor: !include_dir_merge_list domains/sensor/
 
 # This component allows you to write Python scripts that are exposed as 
 # services in Home Assistant. Each Python file created in the

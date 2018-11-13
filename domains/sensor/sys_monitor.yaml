@@ -56,7 +56,7 @@
     scan_interval: 600
     monitored_conditions:
       - temperature
-      - illuminance
+      #- illuminance
       - humidity
       - pressure
       - battery
