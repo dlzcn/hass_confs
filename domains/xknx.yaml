@@ -44,7 +44,7 @@ groups:
     dining_room_dining: {group_address: '3/0/2', scene_number: '0'}
     dining_room_party: {group_address: '3/0/2', scene_number: '1'}
     master_bedroom_0: {group_address: '3/0/4', scene_number: '0'}
-    master_bedroom_1: {group_address: '3/0/4', scene_number: '2'}
-    master_bedroom_2: {group_address: '3/0/4', scene_number: '3'}
-    master_bedroom_3: {group_address: '3/0/4', scene_number: '4'}
+    master_bedroom_1: {group_address: '3/0/4', scene_number: '1'}
+    master_bedroom_2: {group_address: '3/0/4', scene_number: '2'}
+    master_bedroom_3: {group_address: '3/0/4', scene_number: '3'}
      
