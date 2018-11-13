@@ -74,94 +74,72 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 class _Sensortag():
     """Read data from Sensortag sensor."""
     
-    def __init__(self, mac, cache_timeout, median_count):
+    def __init__(self, mac, cache_timeout):
         """Initialize the sensor."""
         self.tag = None
+        self.mac = mac
         try:
             self.tag = sensortag.SensorTag(mac)
         except BTLEException as bterror:
-            _LOGGER.info('Coonection error %s, MAC %s', bterror, mac) 
-        self._cache = None
+            _LOGGER.info('Coonection error %s, MAC %s', bterror, mac)
+        self._registered = []
+        self._cache = {}
         self._cache_timeout = timedelta(seconds=cache_timeout)
-        self._last_read = None
+        self._last_read = datetime.now() - timedelta(seconds=cache_timeout+1)
         self.lock = Lock()
-        self.data = []
-        # Median is used to filter out outliers. median of 3 will filter
-        # single outliers, while  median of 5 will filter double outliers
-        # Use median_count = 1 if no filtering is required.
-        self.median_count = median_count
     
     def enable(self, sensorname):
         if hasattr(self.tag, sensorname):
            tagfn = getattr(self.tag, sensorname)
            # enable the sensor
            tagfn.enable()
+           self._registered.append(sensorname)
+        else:
+            _LOGGER.info('%s is not supported by %s', sensorname, self.mac)
 
     def read(self, sensorname, force_update):
         """Read sensor data"""
-        if not hasattr(self.tag, sensorname):
+        if sensorname not in self._registered:
+            _LOGGER.info(
+                '%s not enabled or not supported by SensorTag %s',
+                sensorname, self.mac)
             return None
 
-        tagfn = getattr(self.tag, sensorname)
-        if force_update:
-            self._cache = None
-
-        if self._cache is None or \
+        if self._cache is None or force_update or \
             (datetime.now() - self._cache_timeout > self._last_read):
             self._last_read = datetime.now()
-            # Use the lock to make sure read operation is done in sequence order
+            # read all in once!
             with self.lock:
-                data = None
-                try:
-                    rdata = tagfn.read()
-                    if sensorname == 'IRtemperature':
-                        data = '{:3.1f}'.format(rdata[0])
-                    if sensorname in ['humidity', 'barometer']:
-                        data = '{:.1f}'.format(rdata[1])
-                    if self.sensorname == 'lightmeter':
-                        data = '{:.1f}'.format(rdata)
-                    if self.sensorname == 'battery':
-                        data = '{}'.format(rdata)
-                    # update the cache
-                    self._cache = data
-                except TypeError as tperr:
-                    _LOGGER.info("Read error %s", tperr)                    
-                    return None
-                except IOError as ioerr:
-                    _LOGGER.info("Read error %s", ioerr)
-                    return None
-                except BTLEException as bterror:
-                    _LOGGER.info("Read error %s", bterror)
-                    return None
-        else:
-            data = self._cache
+                # try not to clean the cache directly
+                # we fill refill the data sensor by sensor when force_update is enabled
+                data = self._cache
+                for sensor in self._registered:
+                    if force_update and sensor != sensorname:
+                        continue
+                    tagfn = getattr(self.tag, sensor)
+                    try:
+                        rdata = tagfn.read()
+                        if sensor == 'IRtemperature':
+                            data[sensor] = '{:3.1f}'.format(rdata[0])
+                        if sensor in ['humidity', 'barometer']:
+                            data[sensor] = '{:.1f}'.format(rdata[1])
+                        if sensor == 'lightmeter':
+                            data[sensor] = '{:.1f}'.format(rdata)
+                        if sensor == 'battery':
+                            data[sensor] = '{}'.format(rdata)
+                    except TypeError as tperr:
+                        _LOGGER.info("Read error %s, %s@%s", tperr, sensor, self.mac)
+                    except IOError as ioerr:
+                        _LOGGER.info("Read error %s, %s@%s", ioerr, sensor, self.mac)
+                    except BTLEException as bterror:
+                        _LOGGER.info("Read error %s, %s@%s", bterror, sensor, self.mac)
 
-        if data is not None:
-            _LOGGER.debug("%s = %s", self.name, data)
-            self.data.append(data)
-        else:
-            _LOGGER.info("Did not receive any data from Sensortag %s",
-                         self.name)
-            # Remove old data from median list or set sensor value to None
-            # if no data is available anymore
-            if self.data:
-                self.data = self.data[1:]
-            
-            return None
+                # update the cache
+                self._cache = data
 
-        _LOGGER.debug("Data collected: %s", self.data)
-        if len(self.data) > self.median_count:
-            self.data = self.data[1:]
-
-        if len(self.data) == self.median_count:
-            median = sorted(self.data)[int((self.median_count - 1) / 2)]
-            _LOGGER.debug("Median is: %s", median)
-            return median
-        elif self.data:
-            _LOGGER.debug("Set initial state")
-            return self.data[0]
+        if sensorname in self._cache:
+            return self._cache[sensorname]
         else:
-            _LOGGER.debug("Not yet enough data for median calculation")
             return None
     
 
@@ -172,7 +150,7 @@ async def async_setup_platform(hass, config, async_add_entities,
     cache = config.get(CONF_SCAN_INTERVAL, SCAN_INTERVAL).total_seconds()
     median = config.get(CONF_MEDIAN)
     
-    _sensor_tag = _Sensortag(config.get(CONF_MAC), cache, median)
+    _sensor_tag = _Sensortag(config.get(CONF_MAC), cache)
 
     devs = []
 
@@ -187,7 +165,7 @@ async def async_setup_platform(hass, config, async_add_entities,
         _sensor_tag.enable(sensorname)
 
         devs.append(Sensortag(_sensor_tag, sensorname, name,
-            SENSOR_TYPES[parameter], force_update))
+            SENSOR_TYPES[parameter], force_update, median))
 
     async_add_entities(devs)
 
@@ -195,9 +173,9 @@ async def async_setup_platform(hass, config, async_add_entities,
 class Sensortag(Entity):
     """Implementing the Sensortag sensor."""
 
-    def __init__(self, tag, sensorname, hassname, types, force_update):
+    def __init__(self, sensortag, sensorname, hassname, types, force_update, median_count):
         """Initialize the sensor."""
-        self.sensortag = tag
+        self.sensortag = sensortag
         self.sensorname = sensorname
         self._dev_cls = types[2]
         self._unit = types[0]
@@ -205,6 +183,11 @@ class Sensortag(Entity):
         self._name = hassname
         self._force_update = force_update
         self._state = None
+        self.data = []
+        # Median is used to filter out outliers. median of 3 will filter
+        # single outliers, while  median of 5 will filter double outliers
+        # Use median_count = 1 if no filtering is required.
+        self.median_count = median_count        
 
     async def async_added_to_hass(self):
         """Set initial state."""
@@ -249,7 +232,21 @@ class Sensortag(Entity):
         Update current conditions.
         """
         _LOGGER.debug("Read data for %s", self.name)
-        state = self.sensortag.read(self.sensorname, self._force_update)
-        if state is not None:
-            self._state = state
+        data = self.sensortag.read(self.sensorname, self._force_update)
 
+        if data is None:
+            _LOGGER.info("Did not receive any data from %s", self.name)
+        else:
+            _LOGGER.debug("%s = %s", self.name, data)
+            self.data.append(data)
+        # we only need {median_count} data points
+        if len(self.data) > self.median_count:
+            self.data = self.data[1:]
+        # median filter
+        if len(self.data) == self.median_count:
+            median = sorted(self.data)[int((self.median_count - 1) / 2)]
+            self._state = median
+        elif self.data:
+            self._state = self.data[0]
+        else:
+            _LOGGER.debug("Not yet enough data for median calculation")
