@@ -13,6 +13,7 @@ nonportable_devices:
     - sensor.devsts_oneplusone
     - sensor.devsts_nexus5
     - sensor.devsts_nexus7_2013
+    - sensor.devsts_t400s
 
 portable_devices:
   name: 便携设备
@@ -20,8 +21,10 @@ portable_devices:
   icon: mdi:tag
   entities:
     - device_tracker.haifengdembp
+    - device_tracker.haifengtimiair
     - device_tracker.oneplus_5
     - device_tracker.cc088dab293a
     - device_tracker.mengshideipad
+    - device_tracker.colorful
     - device_tracker.iphone2
     - device_tracker.28ed6ac8552e

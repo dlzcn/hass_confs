@@ -37,5 +37,9 @@
       friendly_name: Nexus7 2013 (Screen)
       value_template: "{% if is_state('device_tracker.android65fb25084c7cc7d3', 'home') %}online{% else %}offline{% endif %}"
       icon_template: mdi:tablet-android
+    devsts_t400s:
+      friendly_name: Thinkpad T400s
+      value_template: "{% if is_state('device_tracker.00216aaceb14', 'home') %}online{% else %}offline{% endif %}"
+      icon_template: mdi:laptop
 
 
