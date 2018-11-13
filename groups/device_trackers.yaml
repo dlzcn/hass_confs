@@ -4,15 +4,15 @@ nonportable_devices:
   view: false
   icon: mdi:server
   entities:
-    - sensor.knx_router 
-    - sensor.raspberrypi
-    - sensor.wndrmacv2
-    - sensor.lumigatewayv3
-    - sensor.chuangmi_camera
-    - sensor.mitv4a
-    - sensor.oneplusone
-    - sensor.nexus5
-    - sensor.nexus7_2013
+    - sensor.devsts_knx_router 
+    - sensor.devsts_raspberrypi
+    - sensor.devsts_wndrmacv2
+    - sensor.devsts_lumigatewayv3
+    - sensor.devsts_chuangmi_camera
+    - sensor.devsts_mitv4a
+    - sensor.devsts_oneplusone
+    - sensor.devsts_nexus5
+    - sensor.devsts_nexus7_2013
 
 portable_devices:
   name: 便携设备

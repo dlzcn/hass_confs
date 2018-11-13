@@ -48,6 +48,8 @@
     command: /srv/homeassistant/bin/hass --version
     scan_interval: 86400
 
+  - platform: rpi_power
+  
   - platform: sensortag
     name: st_control_cabinet
     mac: !secret sensortag_mac

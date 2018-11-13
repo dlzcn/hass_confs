@@ -16,6 +16,7 @@ raspberrypi_sys_monitor:
   view: false
   icon: mdi:monitor
   entities:
+    - sensor.rpi_power_status
     - sensor.cpu_temp
     - sensor.processor_use
     - sensor.memory_free

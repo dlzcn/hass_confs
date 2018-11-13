@@ -9,6 +9,11 @@
     friendly_name: External IP Address
 
   # System Info Sensor
+  sensor.rpi_power_status:
+    friendly_name: Power Status
+    icon: mdi:alarm-light
+    templates:
+      rgb_color: "if (state === '0') return [54, 95, 140]; else return [214, 39, 40];"
   sensor.cpu_temp:
     friendly_name: CPU Temperature
   sensor.cpu_speed:

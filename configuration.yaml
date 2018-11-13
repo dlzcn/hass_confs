@@ -15,6 +15,10 @@ homeassistant:
   customize_domain:
     device_tracker:
       hidden: true
+  customize_glob:
+    "sensor.devsts_*":
+      templates:
+        rgb_color: "if (state === 'online') return [251, 210, 41]; else return [54, 95, 140];"
 
 # Show links to resources in log and frontend
 # introduction:

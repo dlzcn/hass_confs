@@ -6,3 +6,18 @@
     action:
       - delay: 00:02  # Waits 5 minutes
       - service: homekit.start
+
+  - id: rpi_power_issue
+    alias: Power Problem Notification
+    trigger:
+    - platform: numeric_state
+      entity_id: sensor.rpi_power_status
+      above: 0
+      for:
+        minutes: 1
+    condition:
+    action:
+      service: persistent_notification.create
+      data:
+        message: "Charger reported {{ states.sensor.rpi_power_status.state }}"
+        title: "RPI Power Issue"
