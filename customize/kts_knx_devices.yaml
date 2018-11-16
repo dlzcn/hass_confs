@@ -36,9 +36,10 @@
   light.dining_room_ceilinglamp:
     friendly_name: Dining Room Ceilling Lamp
   cover.dining_room_curtain:
-    hidden: true
+    hidden: false
     friendly_name: Dining Room Curtain
   cover.dining_room_sheer:
+    hidden: true
     friendly_name: Dining Room Sheer    
 
 # Master Bedroom
