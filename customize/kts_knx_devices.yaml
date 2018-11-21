@@ -3,8 +3,8 @@
     friendly_name: Entrance Spotlight
   binary_sensor.entrance_sensor:
     friendly_name: Entrance Motion Sensor
-  sensor.hvac_mode:
-    friendly_name: HVAC Mode (0:Cool, 1:Heating)
+  #sensor.hvac_mode:
+  #  friendly_name: HVAC Mode (0:Cool, 1:Heating)
 
 # Living ROOM
   climate.living_room_ac:

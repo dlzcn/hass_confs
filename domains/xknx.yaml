@@ -6,8 +6,8 @@ groups:
   binary_sensor:
     entrance_sensor: {group_address: '6/0/4', device_class: 'motion'}
   
-  sensor:
-    hvac_mode: {group_address: '15/0/5', value_type: 'pulse'}
+  #sensor:
+    #hvac_mode: {group_address: '15/0/5', value_type: 'pulse'}
 
   switch:
     guest_room_heating_onoff: {group_address: '0/0/5', group_address_state: '0/1/5'}
