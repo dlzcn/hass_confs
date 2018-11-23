@@ -110,6 +110,7 @@ venv.bak/
 .uuid
 home-assistant_v2.db
 cert/
+.DS_Store
 
 # my secret informaiton
 secrets.yaml
