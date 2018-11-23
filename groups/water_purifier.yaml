@@ -1,6 +1,6 @@
 
  xiaomi_water_purifier:
-    name: Xiaomi Water Purifier
+    name: 小米净水器 (厨下式)
     view: false
     icon: mdi:water
     entities:
