@@ -12,6 +12,7 @@ master_bedroom:
     - light.master_bedroom_spotlight
     - light.master_bedroom_ceilinglamp
     - light.master_bedroom_light
+    - light.master_bedroom_philips_sread
     - light.master_bedroom_philips_sread_ambient_light
     - cover.master_bedroom_curtain
     - cover.master_bedroom_sheer
