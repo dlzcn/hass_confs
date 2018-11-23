@@ -1,0 +1,5 @@
+# xiaomi miio devices
+  light.master_bedroom_philips_sread:
+    friendly_name: Master Bedroom Bedside Lamp
+  light.yeelight_source_balcony:
+    friendly_name: Source Balcony

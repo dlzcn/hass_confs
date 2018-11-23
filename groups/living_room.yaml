@@ -3,6 +3,7 @@ living_room:
   view: true
   icon: mdi:theater
   entities:
+    - media_player.xiaomi_tv_4a65
     - light.living_room_lightstrip
     - light.living_room_spotlight
     - light.living_room_ceiling_light

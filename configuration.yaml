@@ -80,6 +80,18 @@ xiaomi_aqara:
     - mac: !secret xiaomi_gateway_mac
       key: !secret xiaomi_gateway_key
 
+fan:
+  - platform: xiaomi_miio
+    name: Xiaomi Air Purifier 2
+    host: !secret miio_air_purifier_ip
+    token: !secret miio_air_purifier_token
+    model: zhimi.airpurifier.m1
+
+media_player:
+  - platform: xiaomi_tv
+    name: Xiaomi TV 4A65
+    host: !secret xiaomi_tv_4a65_ip
+
 homekit: !include domains/homekit.yaml
 
 climate: !include domains/climate.yaml

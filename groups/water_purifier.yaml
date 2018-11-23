@@ -1,0 +1,12 @@
+
+ xiaomi_water_purifier:
+    name: Xiaomi Water Purifier
+    view: false
+    icon: mdi:water
+    entities:
+      - sensor.tap_water
+      - sensor.filtered_water
+      - sensor.pp_cotton_filter
+      - sensor.front_active_carbon_filter
+      - sensor.ro_filter
+      - sensor.rear_active_carbon_filter

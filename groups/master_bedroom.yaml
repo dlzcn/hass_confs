@@ -7,10 +7,12 @@ master_bedroom:
     - scene.master_bedroom_1
     - scene.master_bedroom_2
     - scene.master_bedroom_3
+    - fan.xiaomi_air_purifier_2
     - light.master_bedroom_lightstrip
     - light.master_bedroom_spotlight
     - light.master_bedroom_ceilinglamp
     - light.master_bedroom_light
+    - light.master_bedroom_philips_sread
     - cover.master_bedroom_curtain
     - cover.master_bedroom_sheer
     - climate.master_bedroom_ac

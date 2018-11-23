@@ -9,3 +9,5 @@ other_rooms:
     - switch.guest_room_heating_onoff
     - climate.study_ac
     - switch.study_heating_onoff
+    - light.yeelight_source_balcony
+    - group.xiaomi_water_purifier

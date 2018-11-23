@@ -1,0 +1,4 @@
+  - platform: mi_water_purifier
+    host: !secret miio_water_purifier_ip
+    token: !secret miio_water_purifier_token
+    name: Xiaomi Water Purifier
