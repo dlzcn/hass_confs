@@ -11,3 +11,4 @@ other_rooms:
     - switch.study_heating_onoff
     - light.yeelight_ct2_7c49ebb365cf
     - group.xiaomi_water_purifier
+    - group.boiler_pump_ctrl

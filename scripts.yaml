@@ -1,0 +1,7 @@
+  boiler_pump_timer:
+    alias: 'Boiler Pump Timer'
+    sequence:
+      - delay: '00:{{ states.input_slider.boiler_pump_run_time.state | int }}:00'
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.plug_158d00019d0d0c
