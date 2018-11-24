@@ -92,7 +92,7 @@ media_player:
     name: Xiaomi TV 4A65
     host: !secret xiaomi_tv_4a65_ip
 
-input_slider:
+input_number:
   boiler_pump_run_time:
     name: Boiler Pump Run Time
     initial: 10

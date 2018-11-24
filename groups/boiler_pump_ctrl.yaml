@@ -5,6 +5,6 @@
     icon: mdi:water-pump
     entities:
     - switch.plug_158d00019d0d0c
-    - input_slider.boiler_pump_run_time
+    - input_number.boiler_pump_run_time
     - automation.north_balcony_pump_auto_off
     - automation.north_balcony_pump_reset_timer  
