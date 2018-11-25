@@ -11,4 +11,4 @@
 # script related to lights
   script.turn_off_lights:
     friendly_name: 关闭室内所有已开启的灯
-    icon: light-switch
+    icon: mdi:light-switch

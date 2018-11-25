@@ -1,0 +1,59 @@
+homeassistant:
+  # Customization file
+  customize:
+    automation.pump_for_boiler_set_timer:
+      hidden: true 
+    automation.pump_for_boiler_reset_timer:
+      hidden: true 
+    script.boiler_pump_timer:
+      hidden: true 
+
+input_number:
+  boiler_pump_run_time:
+    name: Boiler Pump Run Time
+    initial: 10
+    min: 1
+    max: 60
+    step: 1
+
+automation:
+  - id: north_balcony_pump_set_timer
+    alias: 'Pump for Boiler: set timer'
+    trigger:
+      - platform: state
+        entity_id: switch.plug_158d00019d0d0c
+        to: 'on'
+    action:
+      - service: script.turn_on
+        entity_id: script.boiler_pump_timer
+  
+  - id: north_balcony_pump_reset_timer
+    alias: 'Pump for Boiler: reset timer'
+    trigger: 
+      - platform: state
+        entity_id: switch.plug_158d00019d0d0c
+        to: 'off'
+    action:
+      - service: script.turn_off
+        entity_id: script.boiler_pump_timer
+
+script:
+  boiler_pump_timer:
+    alias: 'Boiler Pump Timer (auto turn off)'
+    sequence:
+      - delay: '00:{{ states.input_number.boiler_pump_run_time.state | int }}:00'
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.plug_158d00019d0d0c
+
+group:
+  boiler_pump_ctrl:
+    name: Boiler Pump Control
+    view: false
+    icon: mdi:water-pump
+    entities:
+    - switch.plug_158d00019d0d0c
+    - input_number.boiler_pump_run_time
+    - automation.pump_for_boiler_set_timer
+    - automation.pump_for_boiler_reset_timer
+    - script.boiler_pump_timer

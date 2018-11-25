@@ -87,14 +87,6 @@ media_player:
     name: Xiaomi TV 4A65
     host: !secret xiaomi_tv_4a65_ip
 
-input_number:
-  boiler_pump_run_time:
-    name: Boiler Pump Run Time
-    initial: 10
-    min: 1
-    max: 60
-    step: 1
-
 homekit: !include domains/homekit.yaml
 
 climate: !include domains/climate.yaml

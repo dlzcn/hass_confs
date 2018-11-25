@@ -57,11 +57,12 @@
     icon: mdi:radiator
   light.master_bedroom_light:
     friendly_name: Master Bedroom Spot Light (door)
+    icon: mdi:spotlight
   light.master_bedroom_lightstrip:
     friendly_name: Master Bedroom Strip Light
     icon: mdi:led-strip
   light.master_bedroom_spotlight:
-    friendly_name: Master Bedroom Spotlight
+    friendly_name: Master Bedroom Spot Light
     icon: mdi:spotlight
   light.master_bedroom_ceilinglamp:
     friendly_name: Master Bedroom Ceilling Lamp

@@ -1,0 +1,35 @@
+homeassistant:
+  # Customization file
+  customize:
+    # Xiaomi Water Purifier
+    sensor.tap_water:
+      friendly_name: 自来水水质
+    sensor.filtered_water:
+      friendly_name: 过滤后水质
+    sensor.pp_cotton_filter:
+      friendly_name: PP 棉滤芯
+    sensor.front_active_carbon_filter:
+      friendly_name: 前置活性炭滤芯
+    sensor.ro_filter:
+      friendly_name: RO 反渗透膜滤芯
+    sensor.rear_active_carbon_filter:
+      friendly_name: 后置活性炭滤芯
+
+sensor:
+  - platform: mi_water_purifier
+    host: !secret miio_water_purifier_ip
+    token: !secret miio_water_purifier_token
+    name: Xiaomi Water Purifier
+
+group:
+ xiaomi_water_purifier:
+    name: 小米净水器 (厨下式)
+    view: false
+    icon: mdi:water
+    entities:
+      - sensor.tap_water
+      - sensor.filtered_water
+      - sensor.pp_cotton_filter
+      - sensor.front_active_carbon_filter
+      - sensor.ro_filter
+      - sensor.rear_active_carbon_filter

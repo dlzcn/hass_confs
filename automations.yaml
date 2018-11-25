@@ -21,24 +21,4 @@
       data:
         message: "Charger reported {{ states.sensor.rpi_power_status.state }}"
         title: "RPI Power Issue"
-  
-  - id: north_balcony_pump_auto_off
-    alias: 'Pump for Boiler: turn off (auto)'
-    trigger:
-      - platform: state
-        entity_id: switch.plug_158d00019d0d0c
-        to: 'on'
-    action:
-      - service: script.turn_on
-        entity_id: script.boiler_pump_timer
-  
-  - id: north_balcony_pump_reset_timer
-    alias: 'Pump for Boiler: reset timer'
-    trigger: 
-      - platform: state
-        entity_id: switch.plug_158d00019d0d0c
-        to: 'off'
-    action:
-      - service: script.turn_off
-        entity_id: script.boiler_pump_timer
         
