@@ -19,7 +19,7 @@ master_bedroom:
     - scene.master_bedroom_1
     - scene.master_bedroom_2
     - scene.master_bedroom_3
-    - fan.xiaomi_air_purifier_2
+    - group.xiaomi_air_purifier_v2_1
     - group.master_bedroom_lights
     - cover.master_bedroom_curtain
     - cover.master_bedroom_sheer

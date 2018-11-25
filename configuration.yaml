@@ -80,13 +80,6 @@ xiaomi_aqara:
     - mac: !secret xiaomi_gateway_mac
       key: !secret xiaomi_gateway_key
 
-fan:
-  - platform: xiaomi_miio
-    name: Xiaomi Air Purifier 2
-    host: !secret miio_air_purifier_ip
-    token: !secret miio_air_purifier_token
-    model: zhimi.airpurifier.m1
-
 media_player:
   - platform: xiaomi_tv
     name: Xiaomi TV 4A65
@@ -116,3 +109,5 @@ group: !include_dir_merge_named groups/
 # is not cached so you can easily develop: edit file, save changes, call 
 # service. The scripts are run in a sandboxed environment. 
 python_script:
+
+packages: !include_dir_named packages
