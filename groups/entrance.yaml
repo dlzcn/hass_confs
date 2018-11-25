@@ -5,6 +5,7 @@ entrance:
   entities:
     - light.entrance_spotlight
     - binary_sensor.entrance_sensor
+    - script.turn_off_lights
     - scene.entrance_return
     - scene.entrance_exit
     - scene.living_room_leisure

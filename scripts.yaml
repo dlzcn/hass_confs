@@ -5,3 +5,11 @@
       - service: homeassistant.turn_off
         data:
           entity_id: switch.plug_158d00019d0d0c
+  
+  turn_off_lights:
+    alias: 'Turn off lights that are on'
+    sequence:
+      - service: python_script.turn_off_lights
+      - service: notify.notify
+        data:
+          message: 'Turned off lights that were on'
