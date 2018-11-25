@@ -5,3 +5,6 @@
     friendly_name: Master Bedroom Bedside Lamp
   light.yeelight_ct2_7c49ebb365cf:
     friendly_name: South Balcony
+# script related to lights
+  script.turn_off_lights:
+    friendly_name: 关闭室内所有已开启的灯

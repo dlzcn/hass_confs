@@ -1,6 +1,6 @@
 
   boiler_pump_ctrl:
-    name: Boiler Pump Control (North balcony)
+    name: Boiler Pump Control
     view: false
     icon: mdi:water-pump
     entities:

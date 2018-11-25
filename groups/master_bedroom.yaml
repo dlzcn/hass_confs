@@ -1,3 +1,15 @@
+master_bedroom_lights:
+  name: Master Bedroom Lights
+  view: false
+  icon: mdi:lightbulb
+  entities:
+    - light.master_bedroom_lightstrip
+    - light.master_bedroom_spotlight
+    - light.master_bedroom_ceilinglamp
+    - light.master_bedroom_light
+    - light.master_bedroom_philips_sread
+    - light.master_bedroom_philips_sread_ambient_light
+
 master_bedroom:
   name: Master Bedroom
   view: true
@@ -8,12 +20,7 @@ master_bedroom:
     - scene.master_bedroom_2
     - scene.master_bedroom_3
     - fan.xiaomi_air_purifier_2
-    - light.master_bedroom_lightstrip
-    - light.master_bedroom_spotlight
-    - light.master_bedroom_ceilinglamp
-    - light.master_bedroom_light
-    - light.master_bedroom_philips_sread
-    - light.master_bedroom_philips_sread_ambient_light
+    - group.master_bedroom_lights
     - cover.master_bedroom_curtain
     - cover.master_bedroom_sheer
     - climate.master_bedroom_ac

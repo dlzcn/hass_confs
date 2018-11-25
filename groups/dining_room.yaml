@@ -1,12 +1,18 @@
+dining_room_lights:
+  name: Dining Room Lights
+  view: false
+  icon: mdi:lightbulb
+  entities:
+    - light.dining_room_lightstrip
+    - light.dining_room_spotlight
+    - light.dining_room_ceilinglamp
 
 dining_room:
   name: Dining Room
   view: true
   icon: mdi:glass-cocktail
   entities:
-    - light.dining_room_lightstrip
-    - light.dining_room_spotlight
-    - light.dining_room_ceilinglamp
+    - group.dining_room_lights
     - cover.dining_room_curtain
     - cover.dining_room_sheer
     - climate.dining_room_ac

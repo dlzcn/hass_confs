@@ -1,13 +1,21 @@
-living_room:
-  name: Living Room
-  view: true
-  icon: mdi:theater
+living_room_lights:
+  name: Living Room Lights
+  view: false
+  icon: mdi:lightbulb
   entities:
     - media_player.xiaomi_tv_4a65
     - light.living_room_lightstrip
     - light.living_room_spotlight
     - light.living_room_ceiling_light
     - light.living_room_ceilinglamp
+
+living_room:
+  name: Living Room
+  view: true
+  icon: mdi:theater
+  entities:
+    - media_player.xiaomi_tv_4a65
+    - group.living_room_lights
     - cover.living_room_curtain
     - cover.living_room_sheer
     - climate.living_room_ac
