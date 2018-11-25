@@ -1,10 +1,14 @@
 # xiaomi miio devices
   light.master_bedroom_philips_sread_ambient_light:
     friendly_name: Master Bedroom Ambient Light
+    icon: mdi:brightness-4
   light.master_bedroom_philips_sread:
     friendly_name: Master Bedroom Bedside Lamp
+    icon: mdi:desk-lamp
   light.yeelight_ct2_7c49ebb365cf:
-    friendly_name: South Balcony
+    friendly_name: South Balcony Ceiling Lamp
+    icon: mdi:ceiling-light
 # script related to lights
   script.turn_off_lights:
     friendly_name: 关闭室内所有已开启的灯
+    icon: light-switch

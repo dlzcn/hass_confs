@@ -14,13 +14,17 @@
     icon: mdi:radiator
   light.living_room_lightstrip:
     friendly_name: Living Room Strip Light
+    icon: mdi:led-strip
   light.living_room_spotlight:
     friendly_name: Living Room Spot Light
+    icon: mdi:spotlight
   light.living_room_ceilinglamp:
     hidden: true
     friendly_name: Living Room Ceiling Lamp
+    icon: mdi:ceiling-light
   light.living_room_ceiling_light:
     friendly_name: Living Room Ceiling Light
+    icon: mdi:ceiling-light
   cover.living_room_curtain:
     friendly_name: Living Room Curtain
   cover.living_room_sheer:
@@ -31,10 +35,13 @@
     friendly_name: Dining Room Air Conditioner
   light.dining_room_lightstrip:
     friendly_name: Dining Room Strip Light
+    icon: mdi:led-strip
   light.dining_room_spotlight:
     friendly_name: Dining Room Spot Light
+    icon: mdi:spotlight
   light.dining_room_ceilinglamp:
     friendly_name: Dining Room Ceilling Lamp
+    icon: mdi:ceiling-light
   cover.dining_room_curtain:
     hidden: false
     friendly_name: Dining Room Curtain
@@ -52,10 +59,13 @@
     friendly_name: Master Bedroom Spot Light (door)
   light.master_bedroom_lightstrip:
     friendly_name: Master Bedroom Strip Light
+    icon: mdi:led-strip
   light.master_bedroom_spotlight:
     friendly_name: Master Bedroom Spotlight
+    icon: mdi:spotlight
   light.master_bedroom_ceilinglamp:
     friendly_name: Master Bedroom Ceilling Lamp
+    icon: mdi:ceiling-light
   cover.master_bedroom_curtain:
     friendly_name: Master Bedroom Curtain
   cover.master_bedroom_sheer:
@@ -64,7 +74,8 @@
 
 # Other rooms (guest room & study)
   switch.other_room_light_onoff:
-    friendly_name: Lights (Switch for Other Rooms) 
+    friendly_name: Lights (Switch for Other Rooms)
+    icon: mdi:light-switch
   climate.guest_room_ac:
     friendly_name: Guest Room Air Conditioner
   switch.guest_room_heating_onoff:
