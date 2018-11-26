@@ -70,7 +70,7 @@ cloud:
 # Recoder
 recorder:
   db_url: postgresql://@/hass 
-  purge_keep_days: 14
+  purge_keep_days: 90
   include:
     domains:
       - binary_sensor

@@ -4,8 +4,8 @@ internet_connection_monitor:
   view: false
   icon: mdi:server-network
   entities:
-    - sensor.r6400v2_gateway_kbytesec_sent
-    - sensor.r6400v2_gateway_kbytesec_received
+    #- sensor.r6400v2_gateway_kbytesec_sent
+    #- sensor.r6400v2_gateway_kbytesec_received
     - sensor.external_ip
     - sensor.speedtest_ping
     - sensor.speedtest_upload
