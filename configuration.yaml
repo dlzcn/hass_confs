@@ -67,6 +67,20 @@ tts:
 # Cloud
 cloud:
 
+# Recoder
+recorder:
+  db_url: postgresql://@/hass 
+  purge_keep_days: 14
+  include:
+      - binary_sensor
+      - climate
+      - device_tracker
+      - fan
+      - light
+      - media_player
+      - sensor
+      - switch
+
 # KNX devices
 knx:
   config_file: 'domains/xknx.yaml'
