@@ -72,6 +72,7 @@ recorder:
   db_url: postgresql://@/hass 
   purge_keep_days: 14
   include:
+    domains:
       - binary_sensor
       - climate
       - device_tracker
