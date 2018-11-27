@@ -67,21 +67,6 @@ tts:
 # Cloud
 cloud:
 
-# Recoder
-recorder:
-  db_url: postgresql://@/hass 
-  purge_keep_days: 90
-  include:
-    domains:
-      - binary_sensor
-      - climate
-      - device_tracker
-      - fan
-      - light
-      - media_player
-      - sensor
-      - switch
-
 # KNX devices
 knx:
   config_file: 'domains/xknx.yaml'
@@ -101,6 +86,8 @@ media_player:
   - platform: xiaomi_tv
     name: Xiaomi TV 4A65
     host: !secret xiaomi_tv_4a65_ip
+
+recorder: !include domains/recorder.yaml
 
 homekit: !include domains/homekit.yaml
 
