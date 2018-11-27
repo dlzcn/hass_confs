@@ -9,3 +9,5 @@ Configurations of Home Assistant - Smart Home
 - Customized TI SensorTag `sensor` component.
     * Support `temperature`, `illuminance`, `humidity`, `pressure` and `battery`
 - `HeWeather` component is used to display Weather and Air quality information
+- `mi_water_purifier` component is used to show runing condition of Xiaomi Water purifier
+- `miio` component is enabled to control devices compatible with Mijia platform
