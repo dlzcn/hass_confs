@@ -15,7 +15,7 @@ other_rooms:
     - group.boiler_pump_ctrl
 
 mc350_sensor:
-  name: MC350 (Study Room)
+  name: MC350 (SensorTag)
   view: false
   icon: mdi:tag
   entities:

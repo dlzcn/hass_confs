@@ -1,8 +1,8 @@
   # MC 350 Sensor
   sensor.mc350_temperature:
     friendly_name: Temperature
-  sensor.mc350_illuminance:
-    friendly_name: Illuminance
+  #sensor.mc350_illuminance:
+  #  friendly_name: Illuminance
   sensor.mc350_humidity:
     friendly_name: Humidity
   sensor.mc350_battery:   
