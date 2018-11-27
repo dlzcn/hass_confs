@@ -48,7 +48,7 @@ script:
 
 group:
   boiler_pump_ctrl:
-    name: Boiler Pump Control
+    name: 壁挂炉外置水泵
     view: false
     icon: mdi:water-pump
     entities:

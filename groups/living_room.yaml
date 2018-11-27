@@ -1,9 +1,8 @@
 living_room_lights:
-  name: Living Room Lights
+  name: 客厅灯光
   view: false
   icon: mdi:lightbulb
   entities:
-    - media_player.xiaomi_tv_4a65
     - light.living_room_lightstrip
     - light.living_room_spotlight
     - light.living_room_ceiling_light

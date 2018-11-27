@@ -2,7 +2,7 @@ homeassistant:
   # Customization file
   customize:
     fan.xiaomi_air_purifier_v2_1:
-      friendly_name: Air Purfier (control)
+      friendly_name: Air Purfier (控件)
 
 fan:
   - platform: xiaomi_miio

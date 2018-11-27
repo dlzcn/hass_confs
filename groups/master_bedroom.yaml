@@ -1,5 +1,5 @@
 master_bedroom_lights:
-  name: Master Bedroom Lights
+  name: 主卧灯光
   view: false
   icon: mdi:lightbulb
   entities:

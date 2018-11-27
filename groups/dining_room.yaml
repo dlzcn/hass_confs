@@ -1,5 +1,5 @@
 dining_room_lights:
-  name: Dining Room Lights
+  name: 餐厅灯光
   view: false
   icon: mdi:lightbulb
   entities:
