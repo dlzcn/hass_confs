@@ -10,7 +10,7 @@
     host: !secret addr_netgear_r6400v2
     username: admin
     password: !secret router_password
-    interval_seconds: 30
-    consider_home: 60
+    interval_seconds: 20
+    consider_home: 180
     track_new_devices: True
     hide_if_away: False
