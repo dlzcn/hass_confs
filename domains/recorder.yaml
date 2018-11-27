@@ -4,7 +4,7 @@
     domains:
       - binary_sensor
       - climate
-      - device_tracker
+      #- device_tracker
       - fan
       - light
       - media_player
