@@ -1,0 +1,10 @@
+  - platform: sensortag
+    name: mc350
+    mac: !secret mc350_mac
+    scan_interval: 600
+    monitored_conditions:
+      - temperature
+      #- illuminance
+      - humidity
+      #- pressure
+      - battery

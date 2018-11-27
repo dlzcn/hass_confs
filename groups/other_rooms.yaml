@@ -10,5 +10,16 @@ other_rooms:
     - climate.study_ac
     - switch.study_heating_onoff
     - light.yeelight_ct2_7c49ebb365cf
+    - group.mc350_sensor
     - group.xiaomi_water_purifier
     - group.boiler_pump_ctrl
+
+mc350_sensor:
+  name: MC350 (Study Room)
+  view: false
+  icon: mdi:tag
+  entities:
+    - sensor.mc350_temperature
+    #- sensor.mc350_illuminance
+    - sensor.mc350_humidity
+    - sensor.mc350_battery  
