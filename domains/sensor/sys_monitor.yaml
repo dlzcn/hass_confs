@@ -53,7 +53,7 @@
   - platform: sensortag
     name: st_control_cabinet
     mac: !secret sensortag_mac
-    scan_interval: 600
+    scan_interval: 1800
     monitored_conditions:
       - temperature
       #- illuminance
