@@ -10,6 +10,16 @@
       - media_player
       - sensor
       - switch
+    entities:
+      - device_tracker.haifengdembp
+      - device_tracker.haifengtimiair
+      - device_tracker.oneplus_5
+      - device_tracker.cc088dab293a
+      - device_tracker.mengshideipad
+      - device_tracker.colorful
+      - device_tracker.iphone2
+      - device_tracker.28ed6ac8552e
+      - device_tracker.c0eefb03948f
   exclude:
     entities:
       - sun.sun # Don't record sun data

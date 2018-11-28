@@ -10,7 +10,6 @@ nonportable_devices:
     - sensor.devsts_lumigatewayv3
     - sensor.devsts_chuangmi_camera
     - sensor.devsts_mitv4a
-    - sensor.devsts_oneplusone
     - sensor.devsts_nexus5
     - sensor.devsts_nexus7_2013
     - sensor.devsts_t400s
@@ -28,3 +27,4 @@ portable_devices:
     - device_tracker.colorful
     - device_tracker.iphone2
     - device_tracker.28ed6ac8552e
+    - device_tracker.c0eefb03948f

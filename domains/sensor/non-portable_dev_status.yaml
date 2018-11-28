@@ -25,10 +25,6 @@
       friendly_name: 小米4A电视
       value_template: "{% if is_state('device_tracker.mitv4a544d24be36820c49', 'home') %}online{% else %}offline{% endif %}"
       icon_template: mdi:television
-    devsts_oneplusone: 
-      friendly_name: Oneplus One (IP Camera)
-      value_template: "{% if is_state('device_tracker.c0eefb03948f', 'home') %}online{% else %}offline{% endif %}"
-      icon_template: mdi:cellphone-android
     devsts_nexus5: 
       friendly_name: Nexus 5 (IP Camera)
       value_template: "{% if is_state('device_tracker.android8f98d6795a53dd81', 'home') %}online{% else %}offline{% endif %}"
