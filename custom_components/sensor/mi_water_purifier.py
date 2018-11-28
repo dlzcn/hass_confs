@@ -154,6 +154,7 @@ class XiaomiWaterPurifier(Entity):
 
     def parse_data(self):
         """Parse data."""
+        from miio import DeviceException
         try:
             data = {}
             status = self._device.send('get_prop', [])
