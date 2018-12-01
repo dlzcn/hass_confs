@@ -1,0 +1,90 @@
+homeassistant:
+  # Customization file
+  customize:
+    automation.entrance_motion_lights_on:
+      hidden: true 
+    automation.entrance_motion_lights_off:
+      hidden: true 
+
+input_boolean:
+  entrance_spotlight_automode:
+    name: 玄关灯自动模式
+    initial: on
+    icon: mdi:autorenew
+
+input_number:
+  entrance_spotlight_brightness:
+    name: 玄关灯亮度（自动模式）
+    initial: 135
+    min: 40
+    max: 255
+    step: 1
+  entrance_spotlight_motion_delay:
+    name: 玄关关灯延时（无人则关灯）
+    initial: 1
+    min: 1
+    max: 10
+    step: 1
+
+automation:
+  - id: entrance_on_motion_detected
+    alias: 'Entrance Motion Lights On'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.entrance_sensor
+        to: 'on'
+    condition:
+      condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.entrance_spotlight_automode
+        state: 'on'
+      - condition: state
+        entity_id: light.entrance_spotlight
+        state: 'off'
+      - condition: state
+        entity_id: sun.sun
+        #state: below_horizon
+        state: above_horizon
+    action:
+      - service: light.turn_on
+        entity_id: light.entrance_spotlight
+        data: 
+          brightness: '{{states.input_number.entrance_spotlight_brightness.state | int}}'
+  
+  - id: entrance_on_poeple_left
+    alias: 'Entrance Motion Lights Off'
+    trigger: 
+      - platform: state
+        entity_id: binary_sensor.entrance_sensor
+        to: 'off'
+        for: '00:{{ states.input_number.entrance_spotlight_motion_delay.state | int }}:00'
+    condition:
+      condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.entrance_spotlight_automode
+        state: 'on'
+      - condition: state
+        entity_id: light.entrance_spotlight
+        state: 'on'
+      - condition: state
+        entity_id: sun.sun
+        #state: below_horizon
+        state: above_horizon
+    action:
+      - service: light.turn_off
+        entity_id: light.entrance_spotlight
+
+group:
+  entrance_light_ctrl:
+    name: 玄关顶灯控制(自动)
+    view: false
+    icon: mdi:home-automation
+    entities:
+    - light.entrance_spotlight
+    - input_boolean.entrance_spotlight_automode
+    - input_number.entrance_spotlight_brightness
+    - input_number.entrance_spotlight_motion_delay
+    - automation.entrance_motion_lights_on
+    - automation.entrance_motion_lights_off

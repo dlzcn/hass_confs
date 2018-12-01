@@ -20,6 +20,10 @@
       - device_tracker.iphone2
       - device_tracker.28ed6ac8552e
       - device_tracker.c0eefb03948f
+      - input_number.boiler_pump_run_time
+      - input_boolean.entrance_spotlight_automode
+      - input_number.entrance_spotlight_brightness
+      - input_number.entrance_spotlight_motion_delay
   exclude:
     entities:
       - sun.sun # Don't record sun data
