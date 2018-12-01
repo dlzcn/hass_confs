@@ -17,12 +17,12 @@ input_boolean:
 input_number:
   entrance_spotlight_brightness:
     name: 玄关灯亮度（自动模式）
-    initial: 135
+    initial: 153
     min: 40
     max: 255
     step: 1
   entrance_spotlight_delay:
-    name: 玄关关灯延时（无人则关灯）
+    name: 关灯延时（自动模式）
     initial: 1
     min: 1
     max: 10
@@ -43,8 +43,8 @@ automation:
         state: 'on'
       - condition: state
         entity_id: sun.sun
-        #state: below_horizon
-        state: above_horizon
+        state: below_horizon
+        #state: above_horizon
     action:
       - service: script.turn_off
         entity_id: script.entrance_spotlight_timer
@@ -67,8 +67,8 @@ automation:
         state: 'on'
       - condition: state
         entity_id: sun.sun
-        #state: below_horizon
-        state: above_horizon
+        state: below_horizon
+        #state: above_horizon
     action:
       - service: script.turn_on
         entity_id: script.entrance_spotlight_timer
@@ -88,7 +88,6 @@ group:
     view: false
     icon: mdi:home-automation
     entities:
-    - light.entrance_spotlight
     - input_boolean.entrance_spotlight_automode
     - input_number.entrance_spotlight_brightness
     - input_number.entrance_spotlight_delay
