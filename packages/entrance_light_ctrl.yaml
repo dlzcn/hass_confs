@@ -5,6 +5,8 @@ homeassistant:
       hidden: true 
     automation.entrance_motion_lights_off:
       hidden: true 
+    script.entrance_spotlight_timer:
+      hidden: true
 
 input_boolean:
   entrance_spotlight_automode:
@@ -19,7 +21,7 @@ input_number:
     min: 40
     max: 255
     step: 1
-  entrance_spotlight_motion_delay:
+  entrance_spotlight_delay:
     name: 玄关关灯延时（无人则关灯）
     initial: 1
     min: 1
@@ -40,16 +42,15 @@ automation:
         entity_id: input_boolean.entrance_spotlight_automode
         state: 'on'
       - condition: state
-        entity_id: light.entrance_spotlight
-        state: 'off'
-      - condition: state
         entity_id: sun.sun
         #state: below_horizon
         state: above_horizon
     action:
+      - service: script.turn_off
+        entity_id: script.entrance_spotlight_timer
       - service: light.turn_on
         entity_id: light.entrance_spotlight
-        data: 
+        data_template: 
           brightness: '{{states.input_number.entrance_spotlight_brightness.state | int}}'
   
   - id: entrance_on_poeple_left
@@ -58,7 +59,6 @@ automation:
       - platform: state
         entity_id: binary_sensor.entrance_sensor
         to: 'off'
-        for: '00:{{ states.input_number.entrance_spotlight_motion_delay.state | int }}:00'
     condition:
       condition: and
       conditions:
@@ -66,15 +66,21 @@ automation:
         entity_id: input_boolean.entrance_spotlight_automode
         state: 'on'
       - condition: state
-        entity_id: light.entrance_spotlight
-        state: 'on'
-      - condition: state
         entity_id: sun.sun
         #state: below_horizon
         state: above_horizon
     action:
-      - service: light.turn_off
-        entity_id: light.entrance_spotlight
+      - service: script.turn_on
+        entity_id: script.entrance_spotlight_timer
+
+script:
+  entrance_spotlight_timer:
+    alias: 'Entrance Spotlight Timer (auto turn off)'
+    sequence:
+      - delay: '00:{{ states.input_number.entrance_spotlight_delay.state | int }}:00'
+      - service: homeassistant.turn_off
+        data:
+          entity_id: light.entrance_spotlight
 
 group:
   entrance_light_ctrl:
@@ -85,6 +91,7 @@ group:
     - light.entrance_spotlight
     - input_boolean.entrance_spotlight_automode
     - input_number.entrance_spotlight_brightness
-    - input_number.entrance_spotlight_motion_delay
+    - input_number.entrance_spotlight_delay
     - automation.entrance_motion_lights_on
     - automation.entrance_motion_lights_off
+    - script.entrance_spotlight_timer
