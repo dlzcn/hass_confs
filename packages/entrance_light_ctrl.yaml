@@ -14,7 +14,7 @@ input_boolean:
   entrance_spotlight_automode:
     name: 玄关灯自动模式
     initial: on
-    icon: mdi:autorenew
+    icon: mdi:brightness-auto
 
 input_number:
   entrance_spotlight_brightness:
@@ -24,14 +24,16 @@ input_number:
     max: 255
     step: 1
     icon: mdi:brightness-7
+
   entrance_spotlight_delay:
     name: 关灯延时（自动模式）
-    initial: 1
-    min: 1
-    max: 10
-    step: 1
-    unit_of_measurement: 'min'
-    icon: mdi:clock-end
+    initial: 30
+    min: 0
+    max: 300
+    step: 5
+    unit_of_measurement: 'sec'
+    icon: mdi:timer
+
   entrance_spotlight_lm_threshold:
     name: 开灯亮度阈值（自动模式）
     initial: 150
@@ -111,14 +113,15 @@ script:
   entrance_spotlight_timer:
     alias: 'Entrance Spotlight Timer (auto turn off)'
     sequence:
-      - delay: '00:{{ states.input_number.entrance_spotlight_delay.state | int }}:00'
+      - delay: 
+          seconds: '{{ states.input_number.entrance_spotlight_delay.state | int }}'
       - service: homeassistant.turn_off
         data:
           entity_id: light.entrance_spotlight
 
 group:
   entrance_light_ctrl:
-    name: 玄关顶灯控制(自动)
+    name: 玄关灯控制(自动)
     view: false
     icon: mdi:home-automation
     entities:

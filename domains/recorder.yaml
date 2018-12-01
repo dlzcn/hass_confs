@@ -23,7 +23,7 @@
       - input_number.boiler_pump_run_time
       - input_boolean.entrance_spotlight_automode
       - input_number.entrance_spotlight_brightness
-      - input_number.entrance_spotlight_motion_delay
+      - input_number.entrance_spotlight_delay
       - input_number.entrance_spotlight_lm_threshold
 
   exclude:
