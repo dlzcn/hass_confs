@@ -7,6 +7,8 @@ homeassistant:
       hidden: true 
     script.entrance_spotlight_timer:
       hidden: true
+    binary_sensor.entrance_too_dark:
+      hidden: true
 
 input_boolean:
   entrance_spotlight_automode:
@@ -21,12 +23,30 @@ input_number:
     min: 40
     max: 255
     step: 1
+    icon: mdi:brightness-7
   entrance_spotlight_delay:
     name: 关灯延时（自动模式）
     initial: 1
     min: 1
     max: 10
     step: 1
+    unit_of_measurement: 'min'
+    icon: mdi:clock-end
+  entrance_spotlight_lm_threshold:
+    name: 开灯亮度阈值（自动模式）
+    initial: 150
+    min: 50
+    max: 350
+    step: 10
+    unit_of_measurement: 'lm'
+    icon: mdi:brightness-5
+
+binary_sensor:
+  - platform: template
+    sensors:
+      entrance_too_dark:
+        friendly_name: 'Dark Entrance'
+        value_template: '{{ states.sensor.illumination_34ce008dcf02.state | int < states.input_number.entrance_spotlight_lm_threshold.state | int}}'
 
 automation:
   - id: entrance_on_motion_detected
@@ -45,9 +65,9 @@ automation:
         entity_id: sun.sun
         state: below_horizon
         #state: above_horizon
-      - condition: numeric_state
-        entity_id: sensor.illumination_34ce008dcf02
-        below: '100'
+      - condition: state
+        entity_id: binary_sensor.entrance_too_dark
+        state: 'on'
       - condition: or
         conditions:
         - condition: state
@@ -80,9 +100,9 @@ automation:
         entity_id: sun.sun
         state: below_horizon
         #state: above_horizon
-      - condition: state
-        entity_id: light.entrance_spotlight
-        state: 'on'
+      #- condition: state
+      #  entity_id: light.entrance_spotlight
+      #  state: 'on'
     action:
       - service: script.turn_on
         entity_id: script.entrance_spotlight_timer
@@ -105,6 +125,7 @@ group:
     - input_boolean.entrance_spotlight_automode
     - input_number.entrance_spotlight_brightness
     - input_number.entrance_spotlight_delay
+    - input_number.entrance_spotlight_lm_threshold
     - automation.entrance_motion_lights_on
     - automation.entrance_motion_lights_off
     - script.entrance_spotlight_timer
