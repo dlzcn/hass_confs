@@ -45,6 +45,17 @@ automation:
         entity_id: sun.sun
         state: below_horizon
         #state: above_horizon
+      - condition: numeric_state
+        entity_id: sensor.illumination_34ce008dcf02
+        below: '100'
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: group.living_room_lights
+          state: 'off'
+        - condition: state
+          entity_id: group.dining_room_lights
+          state: 'off'
     action:
       - service: script.turn_off
         entity_id: script.entrance_spotlight_timer
