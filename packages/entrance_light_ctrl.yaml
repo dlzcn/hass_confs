@@ -80,6 +80,9 @@ automation:
         entity_id: sun.sun
         state: below_horizon
         #state: above_horizon
+      - condition: state
+        entity_id: light.entrance_spotlight
+        state: 'on'
     action:
       - service: script.turn_on
         entity_id: script.entrance_spotlight_timer
