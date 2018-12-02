@@ -11,7 +11,8 @@ homeassistant:
 input_number:
   boiler_pump_run_time:
     name: Boiler Pump Run Time
-    initial: 10
+    # Disable initial setting otherwise state of the input_number won't be restored
+    #initial: 10
     min: 1
     max: 60
     step: 1
