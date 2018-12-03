@@ -85,6 +85,11 @@ automation:
     action:
       - service: script.turn_off
         entity_id: script.entrance_spotlight_timer
+      # light.turn_on with birightness will only set brightness of the KNX light
+      # the internal switch state won't be updated as there is no switch_state_address in my case
+      # So my workaround is turn on the light (switch) and then adjust the light (brightness)
+      - service: light.turn_on
+        entity_id: light.entrance_spotlight        
       - service: light.turn_on
         entity_id: light.entrance_spotlight
         data_template: 
@@ -102,13 +107,17 @@ automation:
       - condition: state
         entity_id: input_boolean.entrance_spotlight_automode
         state: 'on'
-      - condition: state
-        entity_id: sun.sun
-        state: below_horizon
-        #state: above_horizon
-      #- condition: state
-      #  entity_id: light.entrance_spotlight
-      #  state: 'on'
+      - condition: or
+        conditions:
+        # on/off state of this light is not always consistent with real condition
+        # try to use both on/off state of the switch and brightness value as conditions
+        - condition: state
+          entity_id: light.entrance_spotlight
+          state: 'on'          
+        - condition: numeric_state
+          entity_id: light.entrace_spotlight
+          value_template: '{{ state.attributes.brightness }}'
+          above: 0
     action:
       - service: script.turn_on
         entity_id: script.entrance_spotlight_timer
