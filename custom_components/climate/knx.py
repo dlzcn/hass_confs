@@ -191,9 +191,7 @@ class KNXClimate(ClimateDevice):
     @property
     def current_operation(self):
         """Return current operation ie. heat, cool, idle."""
-        if self.device.supports_operation_mode:
-            return self.device.operation_mode.value
-        return None
+        return self.device.get_operation_mode()
 
     @property
     def operation_list(self):
