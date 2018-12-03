@@ -174,15 +174,15 @@ class KTSClimate(Device):
             await self.operation_mode.set(3)
         if operation_mode == 'Dry':
             await self.operation_mode.set(2)            
-        if operation_mode == 'Auto':
-            await self.operation_mode.set(-1)
+        # if operation_mode == 'Auto':
+        #     await self.operation_mode.set(-1)
 
     def get_supported_operation_modes(self):
         """Return all configured operation modes."""
         if not self.supports_operation_mode:
             return []
         else:
-            return ['Cool', 'Heat', 'Fan', 'Dry', 'Auto']
+            return ['Cool', 'Heat', 'Fan', 'Dry']
 
     def get_operation_mode(self):
         """Return current operation mode."""
@@ -198,9 +198,9 @@ class KTSClimate(Device):
                 return 'Fan'
             if val == 2:
                 return 'Dry'
-            if val == -1:
-                return 'Auto'
-            return 'Auto'
+            # if val == -1:
+            #     return 'Auto'
+            return 'Cool'
 
     async def set_fan_mode(self, fan_mode):
         """Set the fan mode of a thermostat. Send new fan_mode to BUS and update internal state."""
