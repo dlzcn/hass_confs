@@ -2,6 +2,10 @@
   name: living_room_ceiling_light
   host: !secret opple_light_livingroom_ip
 
+- platform: opple
+  name: guest_room_ceiling_light
+  host: !secret opple_light_guestroom_ip
+
 - platform: xiaomi_miio
   name: master_bedroom_philips_sread
   host: !secret miio_philips_light_ip

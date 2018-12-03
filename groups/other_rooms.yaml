@@ -9,6 +9,7 @@ other_rooms:
     - switch.guest_room_heating_onoff
     - climate.study_ac
     - switch.study_heating_onoff
+    - light.guest_room_ceiling_light
     - light.yeelight_ct2_7c49ebb365cf
     - group.mc350_sensor
     - group.xiaomi_water_purifier

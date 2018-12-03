@@ -8,6 +8,13 @@
   light.yeelight_ct2_7c49ebb365cf:
     friendly_name: South Balcony Ceiling Lamp
     icon: mdi:ceiling-light
+# opple light
+  light.living_room_ceiling_light:
+    friendly_name: Living Room Ceiling Light
+    icon: mdi:ceiling-light
+  light.guest_room_ceiling_light:
+    friendly_name: Guest Room Ceiling Light
+    icon: mdi:ceiling-light
 # script related to lights
   script.turn_off_lights:
     friendly_name: 关闭室内所有已开启的灯

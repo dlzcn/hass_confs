@@ -22,9 +22,6 @@
     hidden: true
     friendly_name: Living Room Ceiling Lamp
     icon: mdi:ceiling-light
-  light.living_room_ceiling_light:
-    friendly_name: Living Room Ceiling Light
-    icon: mdi:ceiling-light
   cover.living_room_curtain:
     friendly_name: Living Room Curtain
   cover.living_room_sheer:
