@@ -29,12 +29,12 @@ groups:
     master_bedroom_light: {group_address_switch: '0/0/8', group_address_switch_state: '0/1/8'}
 
   cover:
-    living_room_curtain: {group_address_long: '2/0/3', group_address_short: '2/1/3'}
-    living_room_sheer: {group_address_long: '2/0/4',  group_address_short: '2/1/4'}
-    dining_room_curtain: {group_address_long: '2/0/7', group_address_short: '2/1/7'}
-    dining_room_sheer: {group_address_long: '2/0/8',  group_address_short: '2/1/8'}
-    master_bedroom_curtain: {group_address_long: '2/0/5', group_address_short: '2/1/5'}
-    master_bedroom_sheer: {group_address_long: '2/0/6',  group_address_short: '2/1/6'}
+    living_room_curtain: {group_address_long: '2/0/3', group_address_short: '2/1/3', travel_time_down: 12, travel_time_up: 12}
+    living_room_sheer: {group_address_long: '2/0/4',  group_address_short: '2/1/4', travel_time_down: 12, travel_time_up: 12}
+    dining_room_curtain: {group_address_long: '2/0/7', group_address_short: '2/1/7', travel_time_down: 6, travel_time_up: 6}
+    dining_room_sheer: {group_address_long: '2/0/8',  group_address_short: '2/1/8', travel_time_down: 6, travel_time_up: 6}
+    master_bedroom_curtain: {group_address_long: '2/0/5', group_address_short: '2/1/5', travel_time_down: 12, travel_time_up: 12}
+    master_bedroom_sheer: {group_address_long: '2/0/6',  group_address_short: '2/1/6', travel_time_down: 12, travel_time_up: 12}
 
   scene:
     entrance_return: {group_address: '3/0/1', scene_number: '0'}
