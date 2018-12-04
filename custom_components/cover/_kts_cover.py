@@ -15,7 +15,7 @@ from xknx.devices.remote_value_scaling import RemoteValueScaling
 from xknx.devices.remote_value_updown import RemoteValueUpDown
 from xknx.devices.remote_value_step import RemoteValueStep
 from xknx.devices.travelcalculator import TravelCalculator
-
+from xknx.knx.dpt import (DPTBinary, DPTArray)
 
 class KTSCover(Device):
     """Class for managing a cover."""
@@ -51,7 +51,6 @@ class KTSCover(Device):
         self.updown = RemoteValueUpDown(
             xknx,
             group_address=group_address_long,
-            group_address_state=group_address_long,
             device_name=self.name,
             after_update_cb=self.after_update,
             invert=invert_position)
@@ -240,18 +239,16 @@ class KTSCover(Device):
 
     async def process_group_write(self, telegram):
         """Process incoming GROUP WRITE telegram."""
+        # Allow DTP 1.00x to be processed, more flexible for old KNX devices
+        if isinstance(telegram.payload, DPTBinary):
+            if(telegram.payload.value==1):
+                telegram.payload.value=255
+            telegram.payload=DPTArray(telegram.payload.value)
+
         position_processed = await self.position.process(telegram)
         if position_processed:
             self.travelcalculator.set_position(self.position.value)
             await self.after_update()
-        else:
-            # use updown state as cover position indication
-            # it is just a rough estimation!
-            open_close_state = await self.updown.process(telegram)
-            if open_close_state:
-                pos = 100 if self.updown.value == 0 else 0
-                self.travelcalculator.set_position(pos)
-                await self.after_update()
 
         await self.angle.process(telegram)
 

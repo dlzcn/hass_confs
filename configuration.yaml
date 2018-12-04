@@ -91,6 +91,7 @@ recorder: !include domains/recorder.yaml
 
 homekit: !include domains/homekit.yaml
 
+cover: !include domains/cover.yaml
 climate: !include domains/climate.yaml
 light: !include domains/light.yaml
 device_tracker: !include domains/device_tracker.yaml
