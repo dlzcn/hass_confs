@@ -23,7 +23,7 @@ REAR_ACTIVE_CARBON_FILTER_REMAINING = {'name': 'Rear active carbon filter', 'key
 
 async def async_setup_platform(hass, config, async_add_entities,
                                discovery_info=None):
-     """Perform the setup for Xiaomi water purifier."""
+    """Perform the setup for Xiaomi water purifier."""
     from miio import Device, DeviceException    
     
     cache = config.get(CONF_SCAN_INTERVAL, SCAN_INTERVAL).total_seconds()
@@ -49,7 +49,7 @@ async def async_setup_platform(hass, config, async_add_entities,
         _LOGGER.exception('Fail to setup Xiaomi water purifier')
         raise PlatformNotReady
 
-    async_add_entities(devivces)
+    async_add_entities(devices)
 
 
 class XiaomiWaterPurifierSensor(Entity):
@@ -136,7 +136,7 @@ class XiaomiWaterPurifier():
     def parse_data(self):
         """Parse data."""
         from miio import DeviceException
-        if not self._cache or force_update or \
+        if not self._cache or \
             (datetime.now() - self._cache_timeout > self._last_read):
             self._last_read = datetime.now()
             try:
