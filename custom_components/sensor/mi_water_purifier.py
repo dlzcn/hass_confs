@@ -52,6 +52,7 @@ class XiaomiWaterPurifierSensor(Entity):
         """Initialize the XiaomiWaterPurifierSensor."""
         self._state = None
         self._data = None
+        self._available = False
         self._waterPurifier = waterPurifier
         self._data_key = data_key
         self.parse_data()
@@ -96,10 +97,18 @@ class XiaomiWaterPurifierSensor(Entity):
 
         return attrs
 
+    @property
+    def available(self):
+        """Return true when state is known."""
+        return self._available
+
     def parse_data(self):
         if self._waterPurifier._data:
             self._data = self._waterPurifier._data
             self._state = self._data[self._data_key['key']]
+            self._available = True
+        else:
+            self._available = False
 
     def update(self):
         """Get the latest data and updates the states."""
@@ -113,6 +122,7 @@ class XiaomiWaterPurifier(Entity):
         self._state = None
         self._device = device
         self._name = name
+        self._available = False
         self.parse_data()
 
     @property
@@ -152,6 +162,11 @@ class XiaomiWaterPurifier(Entity):
 
         return attrs
 
+    @property
+    def available(self):
+        """Return true when state is known."""
+        return self._available
+
     def parse_data(self):
         """Parse data."""
         from miio import DeviceException
@@ -175,11 +190,13 @@ class XiaomiWaterPurifier(Entity):
 
             self._data = data
             self._state = self._data[FILTERED_WATER_QUALITY['key']]
+            self._available = True
         except DeviceException:
             _LOGGER.exception('Fail to get_prop from Xiaomi water purifier')
             self._data = None
             self._state = None
-            raise PlatformNotReady
+            self._available = False
+            #raise PlatformNotReady
 
     def update(self):
         """Get the latest data and updates the states."""
