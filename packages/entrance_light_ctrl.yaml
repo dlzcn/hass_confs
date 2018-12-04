@@ -68,12 +68,16 @@ automation:
         entity_id: input_boolean.entrance_spotlight_automode
         state: 'on'
       - condition: state
-        entity_id: sun.sun
-        state: below_horizon
-        #state: above_horizon
-      - condition: state
         entity_id: binary_sensor.entrance_too_dark
         state: 'on'
+      - condition: or
+        conditions:
+        - condition: sun
+          after: sunset
+          after_offset: "-01:00:00"
+        - condition: sun
+          before: sunrise
+          before_offset: "+01:00:00"
       - condition: or
         conditions:
         - condition: state
