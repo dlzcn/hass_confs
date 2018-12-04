@@ -20,6 +20,7 @@ sensor:
     host: !secret miio_water_purifier_ip
     token: !secret miio_water_purifier_token
     name: Xiaomi Water Purifier
+    scan_interval: 1800
 
 group:
  xiaomi_water_purifier:
