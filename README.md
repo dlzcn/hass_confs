@@ -14,6 +14,7 @@ Configurations of Home Assistant - Smart Home
 - Customized `HeWeather` component is used to display Weather and Air quality information
 - Customized `mi_water_purifier` component is used to show runing condition of Xiaomi Water purifier
     * Fixed data corruption related to I/O under multiple thread environment
+- `xiaomi_aqara` component is enabled to use sensors attached to XiaoMi Gateway (Zigbee)
 - `miio` component is enabled to control devices compatible with Mijia platform
 - `yeelight` component is used to control lights from YeeLight
 - `opple` component is used to control lights from OPPLE
