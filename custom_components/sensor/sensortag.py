@@ -45,8 +45,8 @@ SCAN_INTERVAL = timedelta(seconds=1200)
 # Sensor types are defined like: unit, icon, device_class
 SENSOR_TYPES = {
     'temperature': ['°C', 'mdi:thermometer', DEVICE_CLASS_TEMPERATURE],
-    'illuminance': ['lux', 'mdi:weather-sunny', DEVICE_CLASS_ILLUMINANCE],
-    'humidity': ['%rH', 'mdi:water-percent', DEVICE_CLASS_HUMIDITY],
+    'illuminance': ['lx', 'mdi:weather-sunny', DEVICE_CLASS_ILLUMINANCE],
+    'humidity': ['%', 'mdi:water-percent', DEVICE_CLASS_HUMIDITY],
     'pressure': ['mbar', 'mdi:debug-step-over', DEVICE_CLASS_PRESSURE],
     'battery': ['%', 'mdi:battery-bluetooth', DEVICE_CLASS_BATTERY],
 }
@@ -105,11 +105,11 @@ class _Sensortag():
                 sensorname, self.mac)
             return None
 
-        if not self._cache or force_update or \
-            (datetime.now() - self._cache_timeout > self._last_read):
-            self._last_read = datetime.now()
-            # read all in once!
-            with self.lock:
+        # read all in once!
+        with self.lock:
+            if not self._cache or force_update or \
+                (datetime.now() - self._cache_timeout > self._last_read):
+                last_read = datetime.now()
                 # try not to clean the cache directly
                 # we fill refill the data sensor by sensor when force_update is enabled
                 data = self._cache
@@ -133,14 +133,16 @@ class _Sensortag():
                         _LOGGER.info("Read error %s, %s@%s", ioerr, sensor, self.mac)
                     except BTLEException as bterror:
                         _LOGGER.info("Read error %s, %s@%s", bterror, sensor, self.mac)
-
+                
+                # update timestamp
+                self._last_read = last_read
                 # update the cache
                 self._cache = data
 
-        if sensorname in self._cache:
-            return self._cache[sensorname]
-        else:
-            return None
+            if sensorname in self._cache:
+                return self._cache[sensorname]
+            else:
+                return None
     
 
 async def async_setup_platform(hass, config, async_add_entities,
