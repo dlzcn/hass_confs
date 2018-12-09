@@ -72,13 +72,13 @@
 
     - name: study_ac
       platform: knx
-      temperature_address: '15/1/6'
-      target_temperature_address: '14/0/18'
-      target_temperature_state_address: '15/0/18'
+      temperature_address: '15/1/5'
+      target_temperature_address: '14/0/15'
+      target_temperature_state_address: '15/0/15'
       target_temperature_step: 0.5      
-      operation_mode_address: '14/0/17'
-      operation_mode_state_address: '15/0/17'
-      fan_mode_address: '14/0/106'
-      fan_mode_state_address: '15/0/106'
-      on_off_address: '14/0/16'
-      on_off_state_address: '15/0/16'
+      operation_mode_address: '14/0/14'
+      operation_mode_state_address: '15/0/14'
+      fan_mode_address: '14/0/105'
+      fan_mode_state_address: '15/0/105'
+      on_off_address: '14/0/13'
+      on_off_state_address: '15/0/13'
