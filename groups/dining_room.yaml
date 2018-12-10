@@ -16,3 +16,4 @@ dining_room:
     - cover.dining_room_curtain
     - cover.dining_room_sheer
     - climate.dining_room_ac
+    - switch.wall_plug_158d000249b64a
