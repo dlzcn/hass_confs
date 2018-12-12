@@ -13,7 +13,6 @@ living_room:
   view: true
   icon: mdi:theater
   entities:
-    - media_player.xiaomi_tv_4a65
     - group.living_room_lights
     - cover.living_room_curtain
     - cover.living_room_sheer

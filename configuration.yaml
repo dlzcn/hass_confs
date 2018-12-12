@@ -77,11 +77,6 @@ xiaomi_aqara:
     - mac: !secret xiaomi_gateway_mac
       key: !secret xiaomi_gateway_key
 
-media_player:
-  - platform: xiaomi_tv
-    name: Xiaomi TV 4A65
-    host: !secret xiaomi_tv_4a65_ip
-
 recorder: !include domains/recorder.yaml
 
 homekit: !include domains/homekit.yaml
