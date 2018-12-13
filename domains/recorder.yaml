@@ -20,11 +20,15 @@
       - device_tracker.iphone2
       - device_tracker.28ed6ac8552e
       - device_tracker.c0eefb03948f
-      - input_number.boiler_pump_run_time
-      - input_boolean.entrance_spotlight_automode
-      - input_number.entrance_spotlight_brightness
-      - input_number.entrance_spotlight_delay
-      - input_number.entrance_spotlight_lm_threshold
+      #- input_number.boiler_pump_run_time
+      #- input_boolean.entrance_spotlight_automode
+      #- input_number.entrance_spotlight_brightness
+      #- input_number.entrance_spotlight_delay
+      #- input_number.entrance_spotlight_lm_threshold
+      - device_tracker.iphone_m
+      - device_tracker.iphone_f      
+      - device_tracker.a45e6075b57c
+      - device_tracker.a03be3165927
 
   exclude:
     entities:
@@ -35,7 +39,6 @@
       - sensor.external_ip
       - sensor.ipv4_address_wlan0
       - sensor.last_boot
-      - sensor.since_last_boot
       - sensor.ha_installed_version
       - sensor.ha_current_version
       - sensor.home_assistant_up_time
