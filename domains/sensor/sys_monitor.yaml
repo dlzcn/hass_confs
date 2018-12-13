@@ -34,7 +34,7 @@
     name: cpu temp
     command: "/bin/cat /sys/class/thermal/thermal_zone0/temp"
     unit_of_measurement: "°C"
-    value_template: '{{ value | multiply(0.001) }}'
+    value_template: '{{ value | multiply(0.001) | round(3) }}'
 
   - platform: rest
     resource: https://pypi.python.org/pypi/homeassistant/json
