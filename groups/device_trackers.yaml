@@ -22,9 +22,9 @@ portable_devices:
     - device_tracker.haifengdembp
     - device_tracker.haifengtimiair
     - device_tracker.oneplus_5
-    - device_tracker.cc088dab293a
+    - device_tracker.iphone_hf
     - device_tracker.mengshideipad
     - device_tracker.colorful
-    - device_tracker.iphone2
-    - device_tracker.28ed6ac8552e
-    - device_tracker.c0eefb03948f
+    - device_tracker.iphone_ms1
+    - device_tracker.iphone_ms2
+    - device_tracker.oneplus_1
