@@ -13,6 +13,8 @@ living_room:
   view: true
   icon: mdi:theater
   entities:
+    - binary_sensor.motion_sensor_158d0002b6e599
+    - sensor.illumination_158d0002b6e599
     - group.living_room_lights
     - cover.living_room_curtain
     - cover.living_room_sheer

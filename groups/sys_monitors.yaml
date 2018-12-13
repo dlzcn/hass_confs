@@ -23,7 +23,6 @@ raspberrypi_sys_monitor:
     - sensor.disk_free_
     - sensor.ipv4_address_wlan0
     - sensor.last_boot
-    - sensor.since_last_boot
     #- sensor.signal_strength
     #- sensor.link_quality
     - sensor.ha_installed_version
