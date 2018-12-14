@@ -25,3 +25,4 @@ master_bedroom:
     - cover.master_bedroom_sheer
     - climate.master_bedroom_ac
     - climate.master_bedroom_heating    
+    - switch.wall_plug_158d0002396137
