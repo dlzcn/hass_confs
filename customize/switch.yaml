@@ -1,3 +1,6 @@
   switch.wall_plug_158d000249b64a:
-    friendly_name: Dining Room Wall Plug
-    icon: mdi:power-plug
+    friendly_name: Dining Room Wall Outlet
+    icon: mdi:power-socket
+  switch.wall_plug_158d0002396137:
+    friendly_name: Master Bedroom Wall Outlet
+    icon: mdi:power-socket
