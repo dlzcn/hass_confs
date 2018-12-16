@@ -12,6 +12,7 @@ dining_room:
   view: true
   icon: mdi:glass-cocktail
   entities:
+    - binary_sensor.motion_sensor_158d0002c5623b
     - group.dining_room_lights
     - cover.dining_room_curtain
     - cover.dining_room_sheer
