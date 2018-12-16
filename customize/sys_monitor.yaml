@@ -51,7 +51,7 @@
     friendly_name: Illuminance
   sensor.st_control_cabinet_humidity:
     friendly_name: Humidity
-  sensor.st_control_cabinet_pressure:
-    friendly_name: Air pressure
+  #sensor.st_control_cabinet_pressure:
+  #  friendly_name: Air pressure
   sensor.st_control_cabinet_battery:     
     friendly_name: Battery

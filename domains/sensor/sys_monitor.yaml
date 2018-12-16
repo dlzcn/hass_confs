@@ -57,5 +57,5 @@
       - temperature
       #- illuminance
       - humidity
-      - pressure
+      #- pressure
       - battery

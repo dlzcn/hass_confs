@@ -37,5 +37,5 @@ control_cabinet_monitor:
     - sensor.st_control_cabinet_temperature
     - sensor.st_control_cabinet_illuminance
     - sensor.st_control_cabinet_humidity
-    - sensor.st_control_cabinet_pressure
+    #- sensor.st_control_cabinet_pressure
     - sensor.st_control_cabinet_battery   
