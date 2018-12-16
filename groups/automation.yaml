@@ -4,4 +4,5 @@ automation:
   icon: mdi:factory
   view: false
   entities:
-    - automation.homekit_start  
+    - automation.start_homekit  
+    - automation.power_problem_notification
