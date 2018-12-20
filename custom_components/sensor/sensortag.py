@@ -222,7 +222,19 @@ class Sensortag(Entity):
     @property
     def icon(self):
         """Return the icon to use in the frontend."""
-        return self._icon
+        if self._dev_cls != DEVICE_CLASS_BATTERY:
+            return self._icon
+        else:
+            try:
+                val = round(int(self._state), -1)
+                if val == 0:
+                    return 'mdi:battery-alert-bluetooth'
+                elif val <= 90:
+                    return 'mdi:battery-{}-bluetooth'.format(val)
+                else:
+                    return self._icon
+            except (TypeError, ValueError):
+                    return 'mdi:battery-alert-bluetooth'
 
     @property
     def force_update(self):
