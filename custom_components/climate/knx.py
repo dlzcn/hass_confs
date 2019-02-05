@@ -101,18 +101,15 @@ def async_add_devices_config(hass, config, async_add_devices):
         group_address_on_off=config.get(CONF_ON_OFF_ADDRESS),
         group_address_on_off_state=config.get(CONF_ON_OFF_STATE_ADDRESS))
     hass.data[DATA_KNX].xknx.devices.add(climate)
-    async_add_devices([KNXClimate(hass, climate)])
+    async_add_devices([KNXClimate(climate)])
 
 
 class KNXClimate(ClimateDevice):
     """Representation of a KNX climate device."""
 
-    def __init__(self, hass, device):
+    def __init__(self, device):
         """Initialize of a KNX climate device."""
         self.device = device
-        self.hass = hass
-        self.async_register_callbacks()
-
         self._unit_of_measurement = TEMP_CELSIUS
 
     @property
@@ -135,6 +132,10 @@ class KNXClimate(ClimateDevice):
             await self.async_update_ha_state()
         self.device.register_device_updated_cb(after_update_callback)
 
+    async def async_added_to_hass(self):
+        """Store register state change callback."""
+        self.async_register_callbacks(
+    
     @property
     def name(self):
         """Return the name of the KNX device."""
