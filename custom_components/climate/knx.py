@@ -12,7 +12,9 @@ import voluptuous as vol
 
 from homeassistant.components.climate import (
     PLATFORM_SCHEMA, SUPPORT_OPERATION_MODE, SUPPORT_FAN_MODE,
-    SUPPORT_TARGET_TEMPERATURE, SUPPORT_ON_OFF, ClimateDevice)
+    SUPPORT_TARGET_TEMPERATURE, SUPPORT_ON_OFF, 
+    STATE_COOL, STATE_HEAT, STATE_FAN_ONLY, STATE_DRY,
+    ClimateDevice)
 from homeassistant.components.knx import ATTR_DISCOVER_DEVICES, DATA_KNX
 from homeassistant.const import ATTR_TEMPERATURE, CONF_NAME, TEMP_CELSIUS, STATE_UNKNOWN
 from homeassistant.core import callback
@@ -57,6 +59,16 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_ON_OFF_STATE_ADDRESS): cv.string,
     })
 
+# Map KTS operation modes to HA modes. 
+OPERATION_MODES = {
+    "Cool": STATE_COOL,
+    "Heat": STATE_HEAT,
+    "Fan": STATE_FAN_ONLY,
+    "Dry": STATE_DRY
+}
+
+OPERATION_MODES_INV = dict((
+    reversed(item) for item in OPERATION_MODES.items()))
 
 async def async_setup_platform(hass, config, async_add_devices,
                                discovery_info=None):
@@ -192,17 +204,20 @@ class KNXClimate(ClimateDevice):
     @property
     def current_operation(self):
         """Return current operation ie. heat, cool, idle."""
-        return self.device.get_operation_mode()
+        kts_op_mode = self.device.get_operation_mode()
+        return OPERATION_MODES.get(kts_op_mode, None)
 
     @property
     def operation_list(self):
         """Return the list of available operation modes."""
-        return self.device.get_supported_operation_modes()
+        kts_op_list = self.device.get_supported_operation_modes()
+        return [OPERATION_MODES.get(mode) for mode in kts_op_list]
 
     async def async_set_operation_mode(self, operation_mode):
         """Set operation mode."""
         if self.device.supports_operation_mode:
-            await self.device.set_operation_mode(operation_mode)
+            kts_op_mode = OPERATION_MODES_INV.get(operation_mode, None)
+            await self.device.set_operation_mode(kts_op_mode)
 
     @property
     def current_fan_mode(self):
