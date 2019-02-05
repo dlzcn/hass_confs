@@ -18,7 +18,7 @@
     friendly_name: CPU Speed
   sensor.processor_use:
     friendly_name: Processor Use
-  sensor.disk_free_:
+  sensor.disk_free:
     friendly_name: Disk Free Space
   sensor.memory_free:
     friendly_name: Memory Free
