@@ -20,7 +20,7 @@ raspberrypi_sys_monitor:
     - sensor.cpu_temp
     - sensor.processor_use
     - sensor.memory_free
-    - sensor.disk_free_
+    - sensor.disk_free
     - sensor.ipv4_address_wlan0
     - sensor.last_boot
     #- sensor.signal_strength
