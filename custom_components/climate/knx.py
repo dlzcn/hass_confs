@@ -134,7 +134,7 @@ class KNXClimate(ClimateDevice):
 
     async def async_added_to_hass(self):
         """Store register state change callback."""
-        self.async_register_callbacks(
+        self.async_register_callbacks()
     
     @property
     def name(self):
