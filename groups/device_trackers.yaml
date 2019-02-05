@@ -13,6 +13,8 @@ nonportable_devices:
     - sensor.devsts_nexus5
     - sensor.devsts_nexus7_2013
     - sensor.devsts_t400s
+    - sensor.devsts_x220
+    - sensor.devsts_mbp_2012
 
 portable_devices:
   name: 便携设备
