@@ -28,8 +28,10 @@
       #- input_number.entrance_spotlight_delay
       #- input_number.entrance_spotlight_lm_threshold
       - device_tracker.iphone_m
-      - device_tracker.iphone_f      
-      - device_tracker.a45e6075b57c
+      - device_tracker.iphone_f    
+      # Zhu  
+      - device_tracker.5082d5614eb5
+      # Zhang
       - device_tracker.a03be3165927
 
   exclude:
