@@ -14,12 +14,14 @@
       - device_tracker.haifengdembp
       - device_tracker.haifengtimiair
       - device_tracker.oneplus_5
-      - device_tracker.cc088dab293a
+      - device_tracker.iphone_hf
       - device_tracker.mengshideipad
       - device_tracker.colorful
-      - device_tracker.iphone2
-      - device_tracker.28ed6ac8552e
-      - device_tracker.c0eefb03948f
+      - device_tracker.iphone_ms1
+      - device_tracker.iphone_ms2
+      - device_tracker.oneplus_1
+      - device_tracker.kindle_kwp
+      - device_tracker.k07ltsh269
       #- input_number.boiler_pump_run_time
       #- input_boolean.entrance_spotlight_automode
       #- input_number.entrance_spotlight_brightness
@@ -48,7 +50,8 @@
       - sensor.devsts_lumigatewayv3
       - sensor.devsts_chuangmi_camera
       - sensor.devsts_mitv4a
-      - sensor.devsts_oneplusone
       - sensor.devsts_nexus5
       - sensor.devsts_nexus7_2013
-      - sensor.devsts_t400s      
+      - sensor.devsts_t400s
+      - sensor.devsts_x220
+      - sensor.devsts_mbp_2012       
