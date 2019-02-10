@@ -18,3 +18,6 @@ Configurations of Home Assistant - Smart Home
 - `miio` component is enabled to control devices compatible with Mijia platform
 - `yeelight` component is used to control lights from YeeLight
 - `opple` component is used to control lights from OPPLE
+
+## Screenshots
+![LoveLace UI, the Home View](screenshots/Lovelace_main.png)
