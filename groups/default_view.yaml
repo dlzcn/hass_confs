@@ -1,0 +1,67 @@
+default_view:
+  view: yes
+  name: 家
+  icon: mdi:castle
+  entities:
+    - binary_sensor.entrance_sensor
+    - binary_sensor.motion_sensor_158d0002c5623b
+    - binary_sensor.motion_sensor_158d00015dba96
+    - binary_sensor.motion_sensor_158d0002b6e599
+    # device tracker xxxxx
+    - group.acq
+    - group.temperature
+    - group.nature
+    - sensor.illumination_34ce008dcf02
+    - group.default_view_lights
+    - group.default_view_covers
+    - group.default_view_climates
+    - group.default_view_switches
+    - group.mc350_sensor
+
+
+default_view_lights:
+  name: 灯光
+  view: false
+  icon: mdi:lightbulb
+  entities:
+    - light.entrance_spotlight
+    - light.yeelight_ct2_7c49ebb365cf
+    - light.gateway_light_34ce008dcf02
+    - script.turn_off_lights
+
+default_view_covers:
+  name: 窗帘
+  view: false
+  icon: mdi:window-closed
+  entities:
+    - cover.living_room_curtain
+    - cover.living_room_sheer
+    - cover.dining_room_curtain
+    - cover.master_bedroom_curtain
+
+default_view_climates:
+  name: 温度控制
+  view: false
+  icon: mdi:thermometer
+  entities: 
+    - climate.living_room_ac
+    - climate.living_room_heating 
+    - climate.dining_room_ac
+    - climate.guest_room_ac
+    - switch.guest_room_heating_onoff
+    - climate.study_ac
+    - switch.study_heating_onoff
+    - climate.master_bedroom_ac
+    - climate.master_bedroom_heating
+
+default_view_switches:
+  name: 智能开关
+  view: false
+  icon: mdi:dip-switch
+  entities:  
+    - switch.plug_158d00019d0d0c
+    - switch.wall_plug_158d000249b64a
+    - switch.wall_plug_158d0002396137
+
+
+

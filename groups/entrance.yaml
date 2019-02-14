@@ -1,7 +1,7 @@
 entrance:
   name: 门厅
   view: true
-  icon: mdi:castle
+  icon: mdi:door
   entities:
     - light.entrance_spotlight
     - binary_sensor.entrance_sensor

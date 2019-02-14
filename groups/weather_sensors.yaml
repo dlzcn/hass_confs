@@ -6,8 +6,8 @@ temperature:
     - sun.sun
     - sensor.heweather_cond_txt
     - sensor.heweather_uv    
+    - sensor.heweather_tmp_min    
     - sensor.heweather_tmp_max
-    - sensor.heweather_tmp_min
     - sensor.heweather_fl
     - sensor.heweather_tmp
     - sensor.heweather_hum
