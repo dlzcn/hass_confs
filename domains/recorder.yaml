@@ -29,9 +29,9 @@
       #- input_number.entrance_spotlight_lm_threshold
       - device_tracker.iphone_m
       - device_tracker.iphone_f    
-      # Zhu  
+      # Grandpa  
       - device_tracker.5082d5614eb5
-      # Zhang
+      # Grandma
       - device_tracker.a03be3165927
 
   exclude:
@@ -46,14 +46,15 @@
       - sensor.ha_installed_version
       - sensor.ha_current_version
       - sensor.home_assistant_up_time
-      - sensor.devsts_knx_router 
-      - sensor.devsts_raspberrypi
-      - sensor.devsts_wndrmacv2
-      - sensor.devsts_lumigatewayv3
-      - sensor.devsts_chuangmi_camera
-      - sensor.devsts_mitv4a
-      - sensor.devsts_nexus5
-      - sensor.devsts_nexus7_2013
-      - sensor.devsts_t400s
-      - sensor.devsts_x220
-      - sensor.devsts_mbp_2012       
+      # need historical information      
+      # - sensor.devsts_knx_router 
+      # - sensor.devsts_raspberrypi
+      # - sensor.devsts_wndrmacv2
+      # - sensor.devsts_lumigatewayv3
+      # - sensor.devsts_chuangmi_camera
+      # - sensor.devsts_mitv4a
+      # - sensor.devsts_nexus5
+      # - sensor.devsts_nexus7_2013
+      # - sensor.devsts_t400s
+      # - sensor.devsts_x220
+      # - sensor.devsts_mbp_2012       
