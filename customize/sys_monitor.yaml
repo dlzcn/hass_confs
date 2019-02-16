@@ -37,14 +37,6 @@
   sensor.ha_last_restart:
     icon: mdi:home-assistant
   
-  # Network traffic
-  sensor.r6400v2_gateway_kbytesec_received:
-    friendly_name: Main Router - Traffic In
-    icon: mdi:download-network
-  sensor.r6400v2_gateway_kbytesec_sent:
-    friendly_name: Main Router - Traffic Out
-    icon: mdi:upload-network
-
   sensor.st_control_cabinet_temperature:
     friendly_name: Temperature
   sensor.st_control_cabinet_illuminance:
