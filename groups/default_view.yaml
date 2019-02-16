@@ -7,7 +7,13 @@ default_view:
     - binary_sensor.motion_sensor_158d0002c5623b
     - binary_sensor.motion_sensor_158d00015dba96
     - binary_sensor.motion_sensor_158d0002b6e599
-    # device tracker xxxxx
+    - device_tracker.iphone_hf
+    - device_tracker.mengshideipad
+    - device_tracker.iphone_ms1
+    - device_tracker.iphone_m
+    - device_tracker.iphone_f
+    - device_tracker.iphone_wp
+    - device_tracker.iphone_wg
     - group.acq
     - group.temperature
     - group.nature
