@@ -22,6 +22,8 @@
       - device_tracker.oneplus_1
       - device_tracker.kindle_kwp
       - device_tracker.k07ltsh269
+      - device_tracker.macbook_pro_2012
+      - device_tracker.x220
       #- input_number.boiler_pump_run_time
       #- input_boolean.entrance_spotlight_automode
       #- input_number.entrance_spotlight_brightness
@@ -29,10 +31,8 @@
       #- input_number.entrance_spotlight_lm_threshold
       - device_tracker.iphone_m
       - device_tracker.iphone_f    
-      # Grandpa  
-      - device_tracker.5082d5614eb5
-      # Grandma
-      - device_tracker.a03be3165927
+      - device_tracker.iphone_wg
+      - device_tracker.iphone_wp
 
   exclude:
     entities:
@@ -56,5 +56,3 @@
       # - sensor.devsts_nexus5
       # - sensor.devsts_nexus7_2013
       # - sensor.devsts_t400s
-      # - sensor.devsts_x220
-      # - sensor.devsts_mbp_2012       
