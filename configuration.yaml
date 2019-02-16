@@ -89,7 +89,8 @@ sensor: !include_dir_merge_list domains/sensor/
 automation: !include automations.yaml
 script: !include scripts.yaml
 group: !include_dir_merge_named groups/
-
+# new in hass 0.87
+system_health:
 # This component allows you to write Python scripts that are exposed as 
 # services in Home Assistant. Each Python file created in the
 # <config>/python_scripts/ folder will be exposed as a service. The content 
