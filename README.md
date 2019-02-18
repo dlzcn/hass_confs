@@ -21,3 +21,4 @@ Configurations of Home Assistant - Smart Home
 
 ## Screenshots
 ![LoveLace UI, the Home View](screenshots/Lovelace_main.png)
+![LoveLace UI, the Dashboard View](screenshots/Lovelace_dashboard.png)
