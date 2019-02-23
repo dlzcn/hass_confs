@@ -15,18 +15,36 @@ groups:
     other_room_light_onoff: {group_address: '0/0/9', group_address_state: '0/1/9'}
 
   light:
-    entrance_spotlight: {group_address_switch: '1/0/1', group_address_brightness: '1/3/1', group_address_brightness_state: '1/4/1'}
+    entrance_spotlight: {group_address_switch: '1/0/1', 
+      group_address_brightness: '1/3/1', group_address_brightness_state: '1/4/1',
+      min_kelvin: 2700, max_kelvin: 600}
     
-    living_room_lightstrip: {group_address_switch: '0/0/2', group_address_switch_state: '0/1/2'} 
-    living_room_spotlight: {group_address_switch: '1/0/3', group_address_brightness: '1/3/3', group_address_brightness_state: '1/4/3'} 
-    living_room_ceilinglamp: {group_address_switch: '1/0/6', group_address_brightness: '1/3/6', group_address_brightness_state: '1/4/6'}
-    dining_room_lightstrip: {group_address_switch: '0/0/1', group_address_switch_state: '0/1/1'} 
-    dining_room_spotlight: {group_address_switch: '1/0/2', group_address_brightness: '1/3/2', group_address_brightness_state: '1/4/2'} 
-    dining_room_ceilinglamp: {group_address_switch: '1/0/5', group_address_brightness: '1/3/5', group_address_brightness_state: '1/4/5'}
-    master_bedroom_lightstrip: {group_address_switch: '0/0/3', group_address_switch_state: '0/1/3'} 
-    master_bedroom_spotlight: {group_address_switch: '1/0/4', group_address_brightness: '1/3/4', group_address_brightness_state: '1/4/4'} 
-    master_bedroom_ceilinglamp: {group_address_switch: '1/0/7', group_address_brightness: '1/3/7', group_address_brightness_state: '1/4/7'}
-    master_bedroom_light: {group_address_switch: '0/0/8', group_address_switch_state: '0/1/8'}
+    living_room_lightstrip: {group_address_switch: '0/0/2', group_address_switch_state: '0/1/2',
+      min_kelvin: 2700, max_kelvin: 600} 
+    living_room_spotlight: {group_address_switch: '1/0/3', 
+      group_address_brightness: '1/3/3', group_address_brightness_state: '1/4/3',
+      min_kelvin: 2700, max_kelvin: 600} 
+    living_room_ceilinglamp: {group_address_switch: '1/0/6', 
+      group_address_brightness: '1/3/6', group_address_brightness_state: '1/4/6',
+      min_kelvin: 2700, max_kelvin: 600}
+    dining_room_lightstrip: {group_address_switch: '0/0/1', group_address_switch_state: '0/1/1',
+      min_kelvin: 2700, max_kelvin: 600} 
+    dining_room_spotlight: {group_address_switch: '1/0/2', 
+      group_address_brightness: '1/3/2', group_address_brightness_state: '1/4/2',
+      min_kelvin: 2700, max_kelvin: 600} 
+    dining_room_ceilinglamp: {group_address_switch: '1/0/5', 
+      group_address_brightness: '1/3/5', group_address_brightness_state: '1/4/5',
+      min_kelvin: 2700, max_kelvin: 600}
+    master_bedroom_lightstrip: {group_address_switch: '0/0/3', group_address_switch_state: '0/1/3',
+      min_kelvin: 2700, max_kelvin: 600} 
+    master_bedroom_spotlight: {group_address_switch: '1/0/4', 
+      group_address_brightness: '1/3/4', group_address_brightness_state: '1/4/4',
+      min_kelvin: 2700, max_kelvin: 600} 
+    master_bedroom_ceilinglamp: {group_address_switch: '1/0/7',
+      group_address_brightness: '1/3/7', group_address_brightness_state: '1/4/7',
+      min_kelvin: 2700, max_kelvin: 600}
+    master_bedroom_light: {group_address_switch: '0/0/8', group_address_switch_state: '0/1/8',
+      min_kelvin: 2700, max_kelvin: 600}
 
   scene:
     entrance_return: {group_address: '3/0/1', scene_number: '0'}
