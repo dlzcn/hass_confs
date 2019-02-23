@@ -8,6 +8,14 @@
     value_template: '{{ value }}'
     scan_interval: 86400
   
+  - platform: speedtestdotnet
+    scan_interval:
+      minutes: 60
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+
   - platform: systemmonitor
     resources:
       - type: disk_free

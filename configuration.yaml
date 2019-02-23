@@ -97,11 +97,3 @@ system_health:
 # is not cached so you can easily develop: edit file, save changes, call 
 # service. The scripts are run in a sandboxed environment. 
 python_script:
-
-speedtestdotnet:
-  scan_interval:
-    minutes: 60
-  monitored_conditions:
-    - ping
-    - download
-    - upload
