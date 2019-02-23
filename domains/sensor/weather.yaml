@@ -1,4 +1,5 @@
   - platform: yr
+
   - platform: HeWeather
     city: CN101021500
     aqi_city: CN101020100
