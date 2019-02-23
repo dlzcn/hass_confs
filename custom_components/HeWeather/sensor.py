@@ -57,6 +57,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
         vol.Required(CONF_CITY): cv.string,
         vol.Required(CONF_APPKEY): cv.string,
+        vol.Required(CONF_AQI_CITY): cv.string,        
         vol.Required(CONF_OPTIONS, default=[]): vol.All(cv.ensure_list, [vol.In(OPTIONS)]),
     }
 )
