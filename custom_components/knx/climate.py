@@ -10,11 +10,11 @@ Modified by Haifeng for KTS smart solution in Guohao Changfeng Residence
 
 import voluptuous as vol
 
-from homeassistant.components.climate import (
-    PLATFORM_SCHEMA, SUPPORT_OPERATION_MODE, SUPPORT_FAN_MODE,
+from homeassistant.components.climate import PLATFORM_SCHEMA, ClimateDevice
+from homeassistant.components.climate.const import (
+    SUPPORT_OPERATION_MODE, SUPPORT_FAN_MODE,
     SUPPORT_TARGET_TEMPERATURE, SUPPORT_ON_OFF, 
-    STATE_COOL, STATE_HEAT, STATE_FAN_ONLY, STATE_DRY,
-    ClimateDevice)
+    STATE_COOL, STATE_HEAT, STATE_FAN_ONLY, STATE_DRY)
 from homeassistant.components.knx import ATTR_DISCOVER_DEVICES, DATA_KNX
 from homeassistant.const import ATTR_TEMPERATURE, CONF_NAME, TEMP_CELSIUS, STATE_UNKNOWN
 from homeassistant.core import callback
