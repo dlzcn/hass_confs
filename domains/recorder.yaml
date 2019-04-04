@@ -22,7 +22,6 @@
       - device_tracker.oneplus_1
       - device_tracker.kindle_kwp
       - device_tracker.k07ltsh269
-      - device_tracker.macbook_pro_2012
       - device_tracker.x220
       #- input_number.boiler_pump_run_time
       #- input_boolean.entrance_spotlight_automode

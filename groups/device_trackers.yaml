@@ -28,7 +28,6 @@ portable_devices:
     - device_tracker.iphone_ms1
     - device_tracker.iphone_ms2
     - device_tracker.kindle_kwp
-    - device_tracker.macbook_pro_2012
     - device_tracker.iphone_m
     - device_tracker.iphone_f
     - device_tracker.oneplus_1
