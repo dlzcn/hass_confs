@@ -2,12 +2,12 @@
 
 ## 使用方法：
 
-- 在HA中建立以下路径`home assistant\custom_components\sensor`
+- 在HA中建立以下路径`home assistant\custom_components\HeWeather`
 
 ![路径图片](https://cdn2.hachina.io/wp-content/uploads/2018/01/BAD9E1C8521A9967023402224ADAB112.jpg)
 如果HA中不存在以上路径，请参照图示自行建立即可。
 
-- 在sensor文件夹下放入HeWeather.py文件，此版本文件支持0.63以上HA。
+- 在HeWeather文件夹下放入sensor.py文件，此版本文件支持0.63以上HA。
 - 由于部分城市没有AQI监测站，所以如果填入你所在的城市导致报错，请使用你的上级城市名称，配置城市名称支持中英文及拼音。
 
 ## 配置内容如下

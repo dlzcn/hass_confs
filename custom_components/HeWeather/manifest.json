@@ -1,0 +1,8 @@
+{
+  "domain": "heweather",
+  "name": "HeWeather",
+  "documentation": "https://free-api.heweather.com/",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": []
+}

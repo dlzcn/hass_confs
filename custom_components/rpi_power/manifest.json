@@ -1,0 +1,8 @@
+{
+  "domain": "rpi_power",
+  "name": "RPI Power",
+  "documentation": "https://github.com/superjamie/lazyweb/wiki/Raspberry-Pi-Power",
+  "dependencies": [],
+  "codeowners": ["@superjamie"],
+  "requirements": []
+}
