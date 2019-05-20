@@ -48,14 +48,3 @@
       #- pressure
       - battery
 
-  - platform: qnap
-    host: !secret qnap_ip_address
-    username: !secret qnap_username
-    password: !secret qnap_password
-    monitored_conditions:
-      - status
-      - cpu_usage
-      - drive_smart_status
-      - memory_percent_used
-      - network_tx
-      - volume_percentage_used      
