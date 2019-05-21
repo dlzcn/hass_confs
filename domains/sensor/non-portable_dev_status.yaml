@@ -10,7 +10,7 @@
       value_template: "{% if is_state('device_tracker.raspberrypi', 'home') %}online{% else %}offline{% endif %}"
       icon_template: mdi:raspberrypi
     devsts_dnapnas:
-      friendly_name: DNAP TS-551
+      friendly_name: QNAP TS-551
       value_template: "{% if is_state('device_tracker.nas32c61b', 'home') %}online{% else %}offline{% endif %}"      
       icon_template: mdi:nas
     devsts_wndrmacv2: 
