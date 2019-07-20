@@ -29,13 +29,13 @@ raspberrypi_sys_monitor:
     - sensor.ha_current_version
     - sensor.home_assistant_up_time
 
-control_cabinet_monitor:
-  name: 智能控制柜
-  view: false
-  icon: mdi:wall
-  entities:
-    - sensor.st_control_cabinet_temperature
-    #- sensor.st_control_cabinet_illuminance
-    - sensor.st_control_cabinet_humidity
-    #- sensor.st_control_cabinet_pressure
-    - sensor.st_control_cabinet_battery   
+# control_cabinet_monitor:
+#   name: 智能控制柜
+#   view: false
+#   icon: mdi:wall
+#   entities:
+#     - sensor.st_control_cabinet_temperature
+#     #- sensor.st_control_cabinet_illuminance
+#     - sensor.st_control_cabinet_humidity
+#     #- sensor.st_control_cabinet_pressure
+#     - sensor.st_control_cabinet_battery   

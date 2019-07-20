@@ -22,7 +22,7 @@ default_view:
     - group.default_view_covers
     - group.default_view_climates
     - group.default_view_switches
-    - group.mc350_sensor
+    # - group.mc350_sensor
 
 
 default_view_lights:

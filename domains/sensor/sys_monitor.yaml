@@ -37,14 +37,14 @@
 
   - platform: rpi_power
   
-  - platform: sensortag
-    name: st_control_cabinet
-    mac: !secret sensortag_mac
-    scan_interval: 1800
-    monitored_conditions:
-      - temperature
-      #- illuminance
-      - humidity
-      #- pressure
-      - battery
+  # - platform: sensortag
+  #   name: st_control_cabinet
+  #   mac: !secret sensortag_mac
+  #   scan_interval: 1800
+  #   monitored_conditions:
+  #     - temperature
+  #     #- illuminance
+  #     - humidity
+  #     #- pressure
+  #     - battery
 

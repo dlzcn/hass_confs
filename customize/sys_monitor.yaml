@@ -37,13 +37,13 @@
   sensor.ha_last_restart:
     icon: mdi:home-assistant
   
-  sensor.st_control_cabinet_temperature:
-    friendly_name: Temperature
-  sensor.st_control_cabinet_illuminance:
-    friendly_name: Illuminance
-  sensor.st_control_cabinet_humidity:
-    friendly_name: Humidity
-  #sensor.st_control_cabinet_pressure:
-  #  friendly_name: Air pressure
-  sensor.st_control_cabinet_battery:     
-    friendly_name: Battery
+  # sensor.st_control_cabinet_temperature:
+  #   friendly_name: Temperature
+  # sensor.st_control_cabinet_illuminance:
+  #   friendly_name: Illuminance
+  # sensor.st_control_cabinet_humidity:
+  #   friendly_name: Humidity
+  # #sensor.st_control_cabinet_pressure:
+  # #  friendly_name: Air pressure
+  # sensor.st_control_cabinet_battery:     
+  #   friendly_name: Battery
