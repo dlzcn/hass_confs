@@ -4,7 +4,7 @@ For more details about this platform, please refer to the documentation at
 https://home-assistant.io/components/climate.knx/
 
 Modified by Haifeng for KTS smart solution in Guohao Changfeng Residence
- - Air conditioner: temperature, target_temperature, operation_mode, fan_mode, on_off
+ - Air conditioner: temperature, target_temperature, hvac_mode, fan_mode, on_off
  - Floor heating: temperature, target_temperature, on_off
 """
 
@@ -12,9 +12,10 @@ import voluptuous as vol
 
 from homeassistant.components.climate import PLATFORM_SCHEMA, ClimateDevice
 from homeassistant.components.climate.const import (
-    SUPPORT_OPERATION_MODE, SUPPORT_FAN_MODE,
-    SUPPORT_TARGET_TEMPERATURE, SUPPORT_ON_OFF, 
-    STATE_COOL, STATE_HEAT, STATE_FAN_ONLY, STATE_DRY)
+    HVAC_MODE_DRY, HVAC_MODE_FAN_ONLY, 
+    HVAC_MODE_HEAT, HVAC_MODE_COOL,
+    HVAC_MODE_OFF, 
+    SUPPORT_TARGET_TEMPERATURE, SUPPORT_FAN_MODE)
 from homeassistant.components.knx import ATTR_DISCOVER_DEVICES, DATA_KNX
 from homeassistant.const import ATTR_TEMPERATURE, CONF_NAME, TEMP_CELSIUS, STATE_UNKNOWN
 from homeassistant.core import callback
@@ -61,10 +62,10 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 
 # Map KTS operation modes to HA modes. 
 OPERATION_MODES = {
-    "Cool": STATE_COOL,
-    "Heat": STATE_HEAT,
-    "Fan": STATE_FAN_ONLY,
-    "Dry": STATE_DRY
+    "Cool": HVAC_MODE_COOL,
+    "Heat": HVAC_MODE_HEAT,
+    "Fan": HVAC_MODE_FAN_ONLY,
+    "Dry": HVAC_MODE_DRY
 }
 
 OPERATION_MODES_INV = dict((
@@ -128,12 +129,8 @@ class KNXClimate(ClimateDevice):
     def supported_features(self):
         """Return the list of supported features."""
         support = SUPPORT_TARGET_TEMPERATURE
-        if self.device.supports_operation_mode:
-            support |= SUPPORT_OPERATION_MODE
         if self.device.supports_fan_mode:
             support |= SUPPORT_FAN_MODE
-        if self.device.supports_on_off:
-            support |= SUPPORT_ON_OFF
         return support
 
     def async_register_callbacks(self):
@@ -202,25 +199,39 @@ class KNXClimate(ClimateDevice):
         await self.async_update_ha_state()
 
     @property
-    def current_operation(self):
+    def hvac_mode(self):
         """Return current operation ie. heat, cool, idle."""
+        if self.device.supports_on_off and not self.device.is_on:
+            return HVAC_MODE_OFF
         kts_op_mode = self.device.get_operation_mode()
-        return OPERATION_MODES.get(kts_op_mode, None)
+        return OPERATION_MODES.get(kts_op_mode, HVAC_MODE_HEAT)
 
     @property
-    def operation_list(self):
+    def hvac_modes(self):
         """Return the list of available operation modes."""
         kts_op_list = self.device.get_supported_operation_modes()
-        return [OPERATION_MODES.get(mode) for mode in kts_op_list]
+        modes = [OPERATION_MODES.get(mode) for mode in kts_op_list]
+        if self.device.supports_on_off:
+            if HVAC_MODE_HEAT not in modes:
+                modes.append(HVAC_MODE_HEAT)
+            modes.append(HVAC_MODE_OFF)
+        return modes
 
-    async def async_set_operation_mode(self, operation_mode):
+    async def async_set_hvac_mode(self, hvac_mode):
         """Set operation mode."""
+        if self.device.supports_on_off:
+            if hvac_mode == HVAC_MODE_OFF:
+                await self.device.turn_off()
+                return
+            else:
+                await self.device.turn_on()
         if self.device.supports_operation_mode:
-            kts_op_mode = OPERATION_MODES_INV.get(operation_mode, None)
+            kts_op_mode = OPERATION_MODES_INV.get(hvac_mode, None)
             await self.device.set_operation_mode(kts_op_mode)
+            await self.async_update_ha_state()
 
     @property
-    def current_fan_mode(self):
+    def fan_mode(self):
         """Return the fan setting."""
         return self.device.get_fan_mode()
 
@@ -230,7 +241,7 @@ class KNXClimate(ClimateDevice):
             await self.device.set_fan_mode(fan_mode)
 
     @property
-    def fan_list(self):
+    def fan_modes(self):
         """List of available fan modes."""
         return self.device.get_supported_fan_modes()
 
