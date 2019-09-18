@@ -20,7 +20,7 @@
       name: Living Room Spotlight
       room: Living Room
     light.living_room_ceiling_light:
-      name: Living Room Ceiling lamp
+      name: Living Room Ceiling light
       room: Living Room
     cover.living_room_curtain:
       name: Living Room Curtain
