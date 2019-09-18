@@ -1,0 +1,85 @@
+  project_id: !secret google_assistant_projid
+  api_key: !secret google_assistant_apikey
+  exposed_domains:
+    - light
+    - switch
+    - cover
+    - sensor
+    - climate
+  entity_config:
+    switch.other_room_light_onoff:
+      name: Other Rooms Light Main Switch
+      room: Other Rooms
+    light.entrance_spotlight:
+      name: Entrance Spotlight
+      room: Entrance
+    light.living_room_lightstrip:
+      name: Living Room Light strip
+      room: Living Room
+    light.living_room_spotlight:
+      name: Living Room Spotlight
+      room: Living Room
+    light.living_room_ceiling_light:
+      name: Living Room Ceiling lamp
+      room: Living Room
+    cover.living_room_curtain:
+      name: Living Room Curtain
+      room: Living Room
+    cover.living_room_sheer:
+      name: Living Room Sheer
+      room: Living Room
+    climate.living_room_ac:
+      name: Living Room AC
+      room: Living Room
+    climate.living_room_heating:
+      name: Living Room Heating
+      room: Living Room
+    light.dining_room_lightstrip:
+      name: Dining Room Light strip
+      room: Dining Room
+    light.dining_room_spotlight:
+      name: Dining Room Spotlight
+      room: Dining Room
+    light.dining_room_ceilinglamp:
+      name: Dining Room Ceiling lamp
+      room: Dining Room
+    cover.dining_room_sheer:
+      name: Dining Room Sheer
+      room: Dining Room
+    light.master_bedroom_light:
+      name: Master Bedroom Light (Entrance)
+      room: Master Bedroom
+    light.master_bedroom_lightstrip:
+      name: Master Bedroom Lightstrip
+      room: Master Bedroom
+    light.master_bedroom_spotlight:
+      name: Master Bedroom Spotlight
+      room: Master Bedroom
+    light.master_bedroom_ceilinglamp:
+      name: Master Bedroom Ceiling lamp
+      room: Master Bedroom
+    cover.master_bedroom_curtain:
+      name: Master Bedroom Curtain
+      room: Master Bedroom
+    cover.master_bedroom_sheer:
+      name: Master Bedroom Sheer
+      room: Master Bedroom
+    climate.master_bedroom_ac:
+      name: Master Bedroom AC
+      room: Master Bedroom
+    climate.master_bedroom_heating:
+      name: Master Bedroom Heating
+      room: Master Bedroom
+    climate.guest_room_ac:
+      name: Guest Room AC
+      room: Guest Room
+    switch.guest_room_heating_onoff:
+      name: Guest Room Heating Switch
+      room: Guest Room
+    climate.study_ac:
+      name: Study AC
+      room: Study
+    switch.study_heating_onoff:
+      name: Study Heating Switch
+      room: Study
+
