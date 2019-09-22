@@ -15,10 +15,6 @@
   light.guest_room_ceiling_light:
     friendly_name: Guest Room Ceiling Light
     icon: mdi:ceiling-light
-# yeelight
-  light.yeelight_source_balcony:
-    friendly_name: Source Balcony Ceiling Light
-    icon: mdi:ceiling-light
 # script related to lights
   script.turn_off_lights:
     friendly_name: 关闭室内所有已开启的灯

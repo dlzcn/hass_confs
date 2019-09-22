@@ -46,7 +46,6 @@ config:
 discovery:
   ignore:
     - netgear_router
-    - yeelight
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -78,7 +77,6 @@ xiaomi_aqara:
     - mac: !secret xiaomi_gateway_mac
       key: !secret xiaomi_gateway_key
 
-yeelight: !include domain/yeelight.yaml
 recorder: !include domains/recorder.yaml
 
 homekit: !include domains/homekit.yaml
