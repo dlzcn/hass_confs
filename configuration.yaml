@@ -78,7 +78,7 @@ xiaomi_aqara:
     - mac: !secret xiaomi_gateway_mac
       key: !secret xiaomi_gateway_key
 
-yeelight: !include domain/yeelight.yaml
+yeelight: !include domains/yeelight.yaml
 recorder: !include domains/recorder.yaml
 
 homekit: !include domains/homekit.yaml
