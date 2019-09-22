@@ -12,8 +12,4 @@
   token: !secret miio_philips_light_token
   model: philips.light.sread1
 
-# Could be detected automatically, don't try to define it in the configuration file
-#- platform: yeelight
-#  devices:
-#      name: yeelight_source_balcony
-#      model: color2
+

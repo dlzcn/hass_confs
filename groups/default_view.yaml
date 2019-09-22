@@ -31,7 +31,7 @@ default_view_lights:
   icon: mdi:lightbulb
   entities:
     - light.entrance_spotlight
-    - light.yeelight_ct2_7c49ebb365cf
+    - light.yeelight_source_balcony
     - light.gateway_light_34ce008dcf02
     - script.turn_off_lights
 

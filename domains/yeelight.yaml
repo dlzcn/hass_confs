@@ -1,0 +1,5 @@
+# Could be detected automatically, don't try to define it in the configuration file
+  devices:
+    ip: !secret yeelink_light_ct2_ip
+      name: yeelight_source_balcony
+      model: color2
