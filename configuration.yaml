@@ -81,7 +81,7 @@ recorder: !include domains/recorder.yaml
 
 homekit: !include domains/homekit.yaml
 
-google_assistant: !include domains/ghome.yaml
+# google_assistant: !include domains/ghome.yaml
 
 cover: !include domains/cover.yaml
 climate: !include domains/climate.yaml
