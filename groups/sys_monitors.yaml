@@ -1,7 +1,7 @@
 
 internet_connection_monitor:
   name: 网络接入
-  view: false
+  # view: false
   icon: mdi:server-network
   entities:
     #- sensor.r6400v2_gateway_kbytesec_sent
@@ -13,7 +13,7 @@ internet_connection_monitor:
 
 raspberrypi_sys_monitor:
   name: 树莓派资源
-  view: false
+  # view: false
   icon: mdi:monitor
   entities:
     - sensor.rpi_power_status

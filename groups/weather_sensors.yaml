@@ -1,7 +1,7 @@
 
 temperature:
   name: 实时天气
-  view: no
+  # view: no
   entities:
     - sun.sun
     - sensor.heweather_cond_txt
@@ -14,7 +14,7 @@ temperature:
 
 nature:
   name: 降水&风力
-  view: no
+  # view: no
   entities:
     - sensor.heweather_pop
     - sensor.heweather_pcpn
@@ -25,7 +25,7 @@ nature:
 
 acq:
   name: 空气质量
-  view: no
+  # view: no
   entities:
     - sensor.heweather_vis
     - sensor.heweather_pm25

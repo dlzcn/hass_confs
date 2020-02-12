@@ -1,6 +1,6 @@
 dining_room_lights:
   name: 餐厅灯光
-  view: false
+  # view: false
   icon: mdi:lightbulb
   entities:
     - light.dining_room_lightstrip
@@ -9,7 +9,7 @@ dining_room_lights:
 
 dining_room:
   name: Dining Room
-  view: true
+  # view: true
   icon: mdi:glass-cocktail
   entities:
     - binary_sensor.motion_sensor_158d0002c5623b

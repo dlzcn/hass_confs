@@ -1,5 +1,5 @@
 default_view:
-  view: yes
+  # view: yes
   name: 家
   icon: mdi:castle
   entities:
@@ -27,7 +27,7 @@ default_view:
 
 default_view_lights:
   name: 灯光
-  view: false
+  # view: false
   icon: mdi:lightbulb
   entities:
     - light.entrance_spotlight
@@ -37,7 +37,7 @@ default_view_lights:
 
 default_view_covers:
   name: 窗帘
-  view: false
+  # view: false
   icon: mdi:window-closed
   entities:
     - cover.living_room_curtain
@@ -47,7 +47,7 @@ default_view_covers:
 
 default_view_climates:
   name: 温度控制
-  view: false
+  # view: false
   icon: mdi:thermometer
   entities: 
     - climate.living_room_ac
@@ -62,7 +62,7 @@ default_view_climates:
 
 default_view_switches:
   name: 智能开关
-  view: false
+  # view: false
   icon: mdi:dip-switch
   entities:  
     - switch.plug_158d00019d0d0c

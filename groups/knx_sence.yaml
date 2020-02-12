@@ -1,6 +1,6 @@
 knx_scenes:
   name: 场景
-  view: true
+  # view: true
   icon: mdi:developer-board
   entities:
     - scene.entrance_return

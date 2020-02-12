@@ -1,6 +1,6 @@
 entrance:
   name: 门厅
-  view: true
+  # view: true
   icon: mdi:door
   entities:
     - light.entrance_spotlight

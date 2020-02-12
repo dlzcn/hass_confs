@@ -1,7 +1,7 @@
 
 dashboard_device_status:
   name: Dashbord (Device Status)
-  view: true
+  # view: true
   icon: mdi:monitor-multiple
   entities:
     # - group.control_cabinet_monitor

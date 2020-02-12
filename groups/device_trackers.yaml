@@ -1,7 +1,7 @@
 
 nonportable_devices:
   name: 固定设备
-  view: false
+  # view: false
   icon: mdi:server
   entities:
     - sensor.devsts_knx_router 
@@ -19,7 +19,7 @@ nonportable_devices:
 
 portable_devices:
   name: 便携设备
-  view: false
+  # view: false
   icon: mdi:tag
   entities:
     - device_tracker.haifengdembp

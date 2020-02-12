@@ -1,6 +1,6 @@
 living_room_lights:
   name: 客厅灯光
-  view: false
+  # view: false
   icon: mdi:lightbulb
   entities:
     - light.living_room_lightstrip
@@ -10,7 +10,7 @@ living_room_lights:
 
 living_room:
   name: Living Room
-  view: true
+  # view: true
   icon: mdi:theater
   entities:
     - binary_sensor.motion_sensor_158d0002b6e599

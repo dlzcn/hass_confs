@@ -1,7 +1,7 @@
 
 other_rooms:
   name: Guest Room | Study
-  view: true
+  # view: true
   icon: mdi:book-open-page-variant
   entities:
     - switch.other_room_light_onoff

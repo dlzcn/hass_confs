@@ -2,7 +2,7 @@
 automation:
   name: Automation
   icon: mdi:factory
-  view: false
+  # view: false
   entities:
     - automation.start_homekit  
     - automation.power_problem_notification

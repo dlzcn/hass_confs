@@ -1,6 +1,6 @@
 master_bedroom_lights:
   name: 主卧灯光
-  view: false
+  # view: false
   icon: mdi:lightbulb
   entities:
     - light.master_bedroom_lightstrip
@@ -12,7 +12,7 @@ master_bedroom_lights:
 
 master_bedroom:
   name: Master Bedroom
-  view: true
+  # view: true
   icon: mdi:hotel
   entities:
     - scene.master_bedroom_0
