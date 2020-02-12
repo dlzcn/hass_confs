@@ -35,7 +35,7 @@ sensor:
 group:
   xiaomi_air_purifier_v2_1:
     name: 小米空气净化器
-    view: false
+    # view: false
     icon: mdi:fan
     entities:
       - fan.xiaomi_air_purifier_v2_1

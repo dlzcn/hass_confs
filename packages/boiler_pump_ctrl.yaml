@@ -50,7 +50,7 @@ script:
 group:
   boiler_pump_ctrl:
     name: 壁挂炉外置水泵
-    view: false
+    # view: false
     icon: mdi:water-pump
     entities:
     - switch.plug_158d00019d0d0c

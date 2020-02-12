@@ -24,7 +24,7 @@ sensor:
 group:
  xiaomi_water_purifier:
     name: 小米净水器 (厨下式)
-    view: false
+    # view: false
     icon: mdi:water
     entities:
       - sensor.tap_water

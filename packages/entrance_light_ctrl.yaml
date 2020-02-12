@@ -139,7 +139,7 @@ script:
 group:
   entrance_light_ctrl:
     name: 玄关灯控制(自动)
-    view: false
+    # view: false
     icon: mdi:home-automation
     entities:
     - input_boolean.entrance_spotlight_automode
