@@ -71,17 +71,17 @@ OPERATION_MODES = {
 OPERATION_MODES_INV = dict((
     reversed(item) for item in OPERATION_MODES.items()))
 
-async def async_setup_platform(hass, config, async_add_devices,
+async def async_setup_platform(hass, config, async_add_entities,
                                discovery_info=None):
     """Set up climate(s) for KNX platform."""
     if discovery_info is not None:
-        async_add_entities_discovery(hass, discovery_info, async_add_devices)
+        async_add_entities_discovery(hass, discovery_info, async_add_entities)
     else:
-        async_add_entities_config(hass, config, async_add_devices)
+        async_add_entities_config(hass, config, async_add_entities)
 
 
 @callback
-def async_add_entities_discovery(hass, discovery_info, async_add_devices):
+def async_add_entities_discovery(hass, discovery_info, async_add_entities):
     """Set up climates for KNX platform configured within platform."""
     entities = []
     for device_name in discovery_info[ATTR_DISCOVER_DEVICES]:
@@ -91,7 +91,7 @@ def async_add_entities_discovery(hass, discovery_info, async_add_devices):
 
 
 @callback
-def async_add_entities_config(hass, config, async_add_devices):
+def async_add_entities_config(hass, config, async_add_entities):
     """Set up climate for KNX platform configured within platform."""
     from ._kts_climate import KTSClimate
 
