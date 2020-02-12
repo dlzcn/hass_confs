@@ -4,7 +4,7 @@ general:
 
 groups:
   binary_sensor:
-    entrance_sensor: {group_address: '6/0/4', device_class: 'motion'}
+    entrance_sensor: {state_address: '6/0/4', device_class: 'motion'}
   
   #sensor:
     #hvac_mode: {group_address: '15/0/5', value_type: 'pulse'}
