@@ -7,10 +7,18 @@ https://home-assistant.io/components/cover.knx/
 
 import voluptuous as vol
 
+from ._kts_cover import KTSCover
+
 from homeassistant.components.cover import (
-    ATTR_POSITION, ATTR_TILT_POSITION, PLATFORM_SCHEMA, SUPPORT_CLOSE,
-    SUPPORT_OPEN, SUPPORT_SET_POSITION, SUPPORT_SET_TILT_POSITION,
-    SUPPORT_STOP, CoverDevice)
+    ATTR_POSITION, 
+    ATTR_TILT_POSITION, 
+    PLATFORM_SCHEMA, 
+    SUPPORT_CLOSE,
+    SUPPORT_OPEN, 
+    SUPPORT_SET_POSITION, 
+    SUPPORT_SET_TILT_POSITION,
+    SUPPORT_STOP, 
+    CoverDevice)
 from homeassistant.components.knx import ATTR_DISCOVER_DEVICES, DATA_KNX
 from homeassistant.const import CONF_NAME
 from homeassistant.core import callback
@@ -30,7 +38,6 @@ CONF_INVERT_ANGLE = 'invert_angle'
 
 DEFAULT_TRAVEL_TIME = 25
 DEFAULT_NAME = 'KTS Cover'
-DEPENDENCIES = ['knx']
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
@@ -71,7 +78,6 @@ def async_add_entities_discovery(hass, discovery_info, async_add_entities):
 @callback
 def async_add_entities_config(hass, config, async_add_entities):
     """Set up cover for KNX platform configured within platform."""
-    from ._kts_cover import KTSCover
     cover = KTSCover(
         hass.data[DATA_KNX].xknx,
         name=config.get(CONF_NAME),

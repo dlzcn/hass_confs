@@ -10,12 +10,17 @@ Modified by Haifeng for KTS smart solution in Guohao Changfeng Residence
 
 import voluptuous as vol
 
+from ._kts_climate import KTSClimate
+
 from homeassistant.components.climate import PLATFORM_SCHEMA, ClimateDevice
 from homeassistant.components.climate.const import (
-    HVAC_MODE_DRY, HVAC_MODE_FAN_ONLY, 
-    HVAC_MODE_HEAT, HVAC_MODE_COOL,
+    HVAC_MODE_DRY, 
+    HVAC_MODE_FAN_ONLY, 
+    HVAC_MODE_HEAT, 
+    HVAC_MODE_COOL,
     HVAC_MODE_OFF, 
-    SUPPORT_TARGET_TEMPERATURE, SUPPORT_FAN_MODE)
+    SUPPORT_TARGET_TEMPERATURE,
+    SUPPORT_FAN_MODE)
 from homeassistant.components.knx import ATTR_DISCOVER_DEVICES, DATA_KNX
 from homeassistant.const import ATTR_TEMPERATURE, CONF_NAME, TEMP_CELSIUS, STATE_UNKNOWN
 from homeassistant.core import callback
@@ -38,7 +43,6 @@ DEFAULT_NAME = 'KTS Climate'
 DEFAULT_TARGET_TEMPERATURE_STEP = 0.5
 DEFAULT_TARGET_TEMPERATURE_MAX = 30
 DEFAULT_TARGET_TEMPERATURE_MIN = 5
-DEPENDENCIES = ['knx']
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
@@ -93,7 +97,6 @@ def async_add_entities_discovery(hass, discovery_info, async_add_entities):
 @callback
 def async_add_entities_config(hass, config, async_add_entities):
     """Set up climate for KNX platform configured within platform."""
-    from ._kts_climate import KTSClimate
 
     climate = KTSClimate(
         hass.data[DATA_KNX].xknx,
