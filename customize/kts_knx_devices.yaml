@@ -19,7 +19,7 @@
     friendly_name: Living Room Spot Light
     icon: mdi:spotlight
   light.living_room_ceilinglamp:
-    hidden: true
+    # hidden: true
     friendly_name: Living Room Ceiling Lamp
     icon: mdi:ceiling-light
   cover.living_room_curtain:
@@ -40,10 +40,9 @@
     friendly_name: Dining Room Ceilling Lamp
     icon: mdi:ceiling-light
   cover.dining_room_curtain:
-    hidden: false
     friendly_name: Dining Room Curtain
   cover.dining_room_sheer:
-    hidden: true
+    # hidden: true
     friendly_name: Dining Room Sheer    
 
 # Master Bedroom
@@ -67,8 +66,8 @@
   cover.master_bedroom_curtain:
     friendly_name: Master Bedroom Curtain
   cover.master_bedroom_sheer:
+    # hidden: true
     friendly_name: Master Bedroom Sheer 
-    hidden: true   
 
 # Other rooms (guest room & study)
   switch.other_room_light_onoff:

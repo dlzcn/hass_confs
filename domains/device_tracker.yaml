@@ -6,7 +6,6 @@
     consider_home: 60
     new_device_defaults:
       track_new_devices: true
-      hide_if_away: true
   - platform: netgear
     host: !secret addr_netgear_r6400v2
     username: admin
@@ -15,4 +14,3 @@
     consider_home: 180
     new_device_defaults:
       track_new_devices: true
-      hide_if_away: true
