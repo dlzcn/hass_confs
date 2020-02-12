@@ -4,5 +4,5 @@
   "documentation": "https://www.home-assistant.io/components/knx",
   "dependencies": [],
   "codeowners": [],
-  "requirements": ["xknx==0.10.0"]
+  "requirements": ["xknx==0.11.2"]
 }
