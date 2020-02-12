@@ -10,6 +10,8 @@ nonportable_devices:
     - sensor.devsts_wndrmacv2
     - sensor.devsts_lumigatewayv3
     - sensor.devsts_chuangmi_camera
+    - sensor.devsts_xiaobai_camera
+    - sensor.devsts_mijia_camera
     - sensor.devsts_mitv4a
     - sensor.devsts_nexus5
     - sensor.devsts_nexus7_2013

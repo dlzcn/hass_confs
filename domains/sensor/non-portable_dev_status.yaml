@@ -25,6 +25,14 @@
       friendly_name: 小米智能相机
       value_template: "{% if is_state('device_tracker.chuangmi_camera_ipc009', 'home') %}online{% else %}offline{% endif %}"
       icon_template: mdi:webcam
+    devsts_xiaobai_camera:
+      friendly_name: 小白智能相机
+      value_template: "{% if is_state('device_tracker.xiaobai_camera', 'home') %}online{% else %}offline{% endif %}"
+      icon_template: mdi:webcam
+    devsts_mijia_camera_v3:
+      friendly_name: 米家智能相机
+      value_template: "{% if is_state('device_tracker.mijia_camera_v3', 'home') %}online{% else %}offline{% endif %}"
+      icon_template: mdi:webcam            
     devsts_mitv4a: 
       friendly_name: 小米4A电视
       value_template: "{% if is_state('device_tracker.mitv4a544d24be36820c49', 'home') %}online{% else %}offline{% endif %}"
