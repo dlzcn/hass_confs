@@ -47,14 +47,14 @@ groups:
       min_kelvin: 2700, max_kelvin: 600}
 
   scene:
-    entrance_return: {group_address: '3/0/1', scene_number: '0'}
-    entrance_exit: {group_address: '3/0/1', scene_number: '1'}
-    living_room_leisure: {group_address: '3/0/3', scene_number: '0'}
-    living_room_party: {group_address: '3/0/3', scene_number: '1'}
-    dining_room_dining: {group_address: '3/0/2', scene_number: '0'}
-    dining_room_party: {group_address: '3/0/2', scene_number: '1'}
-    master_bedroom_0: {group_address: '3/0/4', scene_number: '0'}
-    master_bedroom_1: {group_address: '3/0/4', scene_number: '1'}
-    master_bedroom_2: {group_address: '3/0/4', scene_number: '2'}
-    master_bedroom_3: {group_address: '3/0/4', scene_number: '3'}
+    entrance_return: {group_address: '3/0/1', scene_number: '1'}
+    entrance_exit: {group_address: '3/0/1', scene_number: '2'}
+    living_room_leisure: {group_address: '3/0/3', scene_number: '1'}
+    living_room_party: {group_address: '3/0/3', scene_number: '2'}
+    dining_room_dining: {group_address: '3/0/2', scene_number: '1'}
+    dining_room_party: {group_address: '3/0/2', scene_number: '2'}
+    master_bedroom_0: {group_address: '3/0/4', scene_number: '1'}
+    master_bedroom_1: {group_address: '3/0/4', scene_number: '2'}
+    master_bedroom_2: {group_address: '3/0/4', scene_number: '3'}
+    master_bedroom_3: {group_address: '3/0/4', scene_number: '4'}
      
