@@ -6,11 +6,11 @@
 #  name: guest_room_ceiling_light
 #  host: !secret opple_light_guestroom_ip
 
-- platform: xiaomi_miio
-  name: master_bedroom_philips_sread
-  host: !secret miio_philips_light_ip
-  token: !secret miio_philips_light_token
-  model: philips.light.sread1
+#- platform: xiaomi_miio
+#  name: master_bedroom_philips_sread
+#  host: !secret miio_philips_light_ip
+#  token: !secret miio_philips_light_token
+#  model: philips.light.sread1
 
 # Could be detected automatically, don't try to define it in the configuration file
 #- platform: yeelight
