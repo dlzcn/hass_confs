@@ -3,6 +3,7 @@ homeassistant:
   customize:
     fan.xiaomi_air_purifier_v2_1:
       friendly_name: Air Purfier (控件)
+      hagenie_deviceType: airpurifier
 
 fan:
   - platform: xiaomi_miio

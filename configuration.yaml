@@ -82,6 +82,8 @@ recorder: !include domains/recorder.yaml
 homekit: !include domains/homekit.yaml
 
 # google_assistant: !include domains/ghome.yaml
+aligenie:
+  expire_hours: 4320
 
 cover: !include domains/cover.yaml
 climate: !include domains/climate.yaml

@@ -12,6 +12,7 @@
   climate.living_room_heating:
     friendly_name: Living Room Floor Heating
     icon: mdi:radiator
+    hagenie_deviceType: heater
   light.living_room_lightstrip:
     friendly_name: Living Room Strip Light
     icon: mdi:led-strip
@@ -51,6 +52,7 @@
   climate.master_bedroom_heating:
     friendly_name: Master Bedroom Floor Heating
     icon: mdi:radiator
+    hagenie_deviceType: heater
   light.master_bedroom_light:
     friendly_name: Master Bedroom Spot Light (door)
     icon: mdi:spotlight
