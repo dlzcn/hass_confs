@@ -80,9 +80,11 @@
   switch.guest_room_heating_onoff:
     friendly_name: Guest Room Heating Switch
     icon: mdi:radiator
+    hagenie_deviceType: heater
   climate.study_ac:
     friendly_name: Study Air Conditioner
   switch.study_heating_onoff:
     friendly_name: Study Heating Switch
     icon: mdi:radiator
+    hagenie_deviceType: heater
 
