@@ -35,8 +35,10 @@
     command: /srv/homeassistant/bin/hass --version
     scan_interval: 86400
 
-  - platform: rpi_power
-  
+  # rpi_power: the custom sensor platform copy was deleted; the builtin
+  # integration is config-flow now and auto-provides binary_sensor.rpi_power
+  # on Raspberry Pi hardware (no YAML entry needed).
+
   # - platform: sensortag
   #   name: st_control_cabinet
   #   mac: !secret sensortag_mac

@@ -1,8 +1,0 @@
-{
-  "domain": "sensortag",
-  "name": "TI Sensor Tag",
-  "documentation": "https://github.com/dlzcn/hass_confs",
-  "dependencies": [],
-  "codeowners": ["@Haifeng"],
-  "requirements": []
-}

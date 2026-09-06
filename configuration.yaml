@@ -42,10 +42,7 @@ config:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
 
-# Discover some devices automatically
-discovery:
-  ignore:
-    - netgear_router
+# discovery: removed in HA 2023.2; devices are discovered via SSDP/zeroconf automatically now
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -56,34 +53,36 @@ history:
 # View all events in a logbook
 logbook:
 
-# Enables a map showing the location of tracked devices
-map:
+# map: removed in newer HA versions (map panel is built into the sidebar now)
 
 # Track the sun
 sun:
 
-# KNX devices
-knx:
+# KNX devices (custom KTS integration, coexists with HA's built-in knx)
+kts_knx:
   config_file: 'domains/xknx.yaml'
+  own_address: '1.2.222'
   tunneling:
     host: !secret knx_router_ip
     port: 3671
     local_ip: !secret local_ip
     #fire_event: True
 
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    - mac: !secret xiaomi_gateway_mac
-      key: !secret xiaomi_gateway_key
+# xiaomi_aqara: YAML setup removed, now config-flow only.
+# Set up via UI (设置 -> 设备与服务 -> 添加集成 -> Xiaomi Gateway (Aqara)),
+# gateway mac/key go there instead of secrets.
+# xiaomi_aqara:
+#   discovery_retry: 5
+#   gateways:
+#     - mac: !secret xiaomi_gateway_mac
+#       key: !secret xiaomi_gateway_key
 
 recorder: !include domains/recorder.yaml
 
 homekit: !include domains/homekit.yaml
 
 # google_assistant: !include domains/ghome.yaml
-aligenie:
-  expire_hours: 4320
+# aligenie: removed (not used anymore; component deleted)
 
 cover: !include domains/cover.yaml
 climate: !include domains/climate.yaml

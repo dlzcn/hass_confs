@@ -1,26 +1,3 @@
-  - platform: yr
-
-  - platform: HeWeather
-    city: CN101021500
-    aqi_city: CN101020100
-    appkey: !secret heweather_apikey
-    options:
-      - fl
-      - tmp
-      - cond_txt
-      - wind_spd
-      - hum
-      - pcpn
-      - pres
-      - vis
-      - aqi
-      - main
-      - qlty
-      - pm10
-      - pm25
-      - uv
-      - wind_sc
-      - wind_dir
-      - tmp_max
-      - tmp_min
-      - pop
+  # platform: yr was removed (yr.no shut down its free API); met is the builtin replacement.
+  # The HeWeather sensors were removed too: the free heweather s6 API is dead.
+  - platform: met

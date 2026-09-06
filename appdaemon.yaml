@@ -1,7 +1,24 @@
+# AppDaemon 4.x configuration
+# Key changes vs the old 2.x file:
+#  - `threads:` is gone (AppDaemon 4 is fully asyncio based)
+#  - `!secret` needs a `secrets:` line pointing to a secrets file
+#    (AppDaemon does not read Home Assistant's secrets.yaml automatically)
+#  - the HASS plugin uses a long-lived access token (create it in HA:
+#    user profile -> Security -> Long-Lived Access Tokens)
+secrets: /config/secrets.yaml
+
 appdaemon:
-  threads: 10
+  name: appdaemon
+  time_zone: Asia/Shanghai
+  latitude: 31.2304
+  longitude: 121.4737
+  elevation: 4
+
   plugins:
     HASS:
       type: hass
       ha_url: http://127.0.0.1:8123
       token: !secret appdaemon_token
+
+# admin UI (optional, http://<host>:23280; presence of the section enables it)
+admin:

@@ -1,8 +1,0 @@
-{
-  "domain": "mi_water_purifier",
-  "name": "MI Water Purifier",
-  "documentation": "https://github.com/dlzcn/hass_confs",
-  "dependencies": [],
-  "codeowners": ["@Haifeng"],
-  "requirements": []
-}

@@ -12,7 +12,7 @@ other_rooms:
     # - light.guest_room_ceiling_light
     - light.yeelight_ct2_7c49ebb365cf
     # - group.mc350_sensor
-    - group.xiaomi_water_purifier
+    # - group.xiaomi_water_purifier  # removed: mi_water_purifier component deleted (not used anymore)
     - group.boiler_pump_ctrl
 
 # mc350_sensor:
